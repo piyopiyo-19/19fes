@@ -64,6 +64,10 @@ body {
   padding: 80px 20px 
 }
 
+#top.section {
+  padding-top: 10px;
+}
+
 
   /*グラデボタン*/
 .button-gradation {
@@ -443,7 +447,7 @@ nav {
   overflow-x: hidden;
   overflow-y: auto;
   transition: 0.5s;
-  z-index: 3;
+  z-index: 105;
 }
 .open nav {
   right: 0;
@@ -519,12 +523,11 @@ nav .inner ul li a:hover {
   transform: scaleX(-1);
   transition: all .5s;
   cursor: pointer;
-  z-index: 3;
-  position: relative;
+  z-index: 110;
 }
 
 .open .toggle_btn {
-  right: 300px;
+  right: 320px;
 }
 
 /* 通常時（3本線） */
@@ -534,6 +537,7 @@ nav .inner ul li a:hover {
   left: 0;
   width: 60px;
   height: 2px;
+  z-index: 111; /* 念のため */
   background-color: #666;
   transition: all .5s;
 }
@@ -592,7 +596,7 @@ nav .inner ul li a:hover {
   height: 100vh;
   background: #000;
   opacity: 0.8;
-  z-index: 2;
+  z-index: 100;
   cursor: pointer;
   transition: all .5s;
 }
@@ -605,7 +609,7 @@ nav .inner ul li a:hover {
 /* TOP画像を横幅100%に表示 */
 .top-image {
   width: 100%;
-  max-width: 100%;
+  max-width: 1400px;
   margin: 0;
   padding: 0;
   overflow: hidden;
@@ -622,9 +626,14 @@ nav .inner ul li a:hover {
 .top-image-wrapper {
   position: relative;
   width: 100%;
+  max-width: 1400px;    /* PC制限ありの場合 */
+  margin: 0 auto;
   overflow: hidden;
+  margin-top: -70px; 
 }
 
+
+/* 背景画像 */
 .top-image-bg {
   width: 100%;
   height: auto;
@@ -651,13 +660,15 @@ nav .inner ul li a:hover {
 /* ロゴ（やや左寄り＋アニメーション付き） */
 .top-logo {
   position: absolute;
-  bottom: 5vh;  /* ロゴ（下位置） */
-  left: -5%;
-  z-index: 10;
+  top: 0%;        /* お好みの位置に調整可能 */
+  left: 0%;
+  width: 100%;
+  height: auto;
+  z-index: 3;
   opacity: 0;
   transform: translateY(30px);
   transition: opacity 1s ease, transform 1s ease;
-  transition-delay: 1.2s;
+  transition-delay: 1s;
 }
 
 .top-logo.visible {
@@ -696,15 +707,14 @@ nav .inner ul li a:hover {
 }
 
 
-/* main2：右寄せ・サイズ追従 */
+/* main2画像を同じ位置に重ねる */
 .top-main2 {
   position: absolute;
-  top: 5%;
-  right: 0%;
-  width: 100vw;           /* ← 少し広げる */
-  min-width: 320px;      /* ← スマホでも小さくなりすぎないように */
-  max-width: 2000px;      /* ← 最大幅も余裕を持たせる */
-  z-index: 9;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  z-index: 2;
   opacity: 0;
   transform: translateY(30px);
   transition: opacity 1s ease, transform 1s ease;
