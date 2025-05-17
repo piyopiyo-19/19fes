@@ -728,7 +728,7 @@ nav .inner ul li a:hover {
   .top-logo img {
     width: 120%;
     max-width: none;
-    margin-left: -20%;
+    margin-left: 0%;
   }
 
   #top.section {
