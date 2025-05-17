@@ -129,6 +129,14 @@ body {
 }
 
 
+ 
+
+
+
+
+
+
+
  /*ページタイトル*/
 .page-title {
     display: flex;
@@ -192,6 +200,11 @@ body {
   display: inline-block;
   border: 2px #e4e4e4 solid;
 }
+
+
+
+
+
 
  /*スクロールバー*/
  .scroller {
@@ -291,219 +304,9 @@ body {
   padding: 10px 0;
 }
 
-/*============= 
-ヘッダー（ハンバーガーメニュー対応） 
-==============*/
-
-nav {
-  display: block;
-  position: fixed;
-  top: 0;
-  left: -300px;
-  bottom: 0;
-  width: 300px;
-  background: #ffffff;
-  overflow-x: hidden;
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
-  transition: .5s;
-  z-index: 3;
-}
-.open nav {
-  left: 0;
-}
-nav .inner {
-  padding: 25px;
-}
-nav .inner ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-nav .inner ul li {
-  position: relative;
-  margin: 0;
-  border-bottom: 1px solid #333;
-}
-nav .inner ul li a {
-  display: block;
-  color: #333;
-  font-size: 14px;
-  padding: 1em;
-  text-decoration: none;
-  transition-duration: 0.2s;
-}
-nav .inner ul li a:hover {
-  background: #e4e4e4;
-}
-@media screen and (max-width: 767px) {
-  nav {
-    left: -240px;
-    width: 240px;
-  }
-}
-/*============
-@keyframes
-=============*/
-@keyframes equalizer01 {
-  0% {
-    width: 70%;
-  }
-  10% {
-    width: 50%;
-  }
-  20% {
-    width: 100%;
-  }
-  30% {
-    width: 10%;
-  }
-  40% {
-    width: 50%;
-  }
-  50% {
-    width: 70%;
-  }
-  60% {
-    width: 50%;
-  }
-  70% {
-    width: 10%;
-  }
-  80% {
-    width: 100%;
-  }
-  90% {
-    width: 10%;
-  }
-  100% {
-    width: 70%;
-  }
-}
-@keyframes equalizer02 {
-  0% {
-    width: 30%;
-  }
-  10% {
-    width: 20%;
-  }
-  20% {
-    width: 40%;
-  }
-  30% {
-    width: 10%;
-  }
-  40% {
-    width: 20%;
-  }
-  50% {
-    width: 30%;
-  }
-  60% {
-    width: 20%;
-  }
-  70% {
-    width: 10%;
-  }
-  80% {
-    width: 40%;
-  }
-  90% {
-    width: 10%;
-  }
-  100% {
-    width: 30%;
-  }
-}
-/*============
-.toggle_btn
-=============*/
-.toggle_btn {
-  display: block;
-  position: fixed;
-  top: 30px;
-  left: 30px;
-  width: 60px;
-  height: 30px;
-  transform: translate(0, 0);
-  transition: all .5s;
-  cursor: pointer;
-  z-index: 3;
-}
-.open .toggle_btn {
-  left: 330px;
-}
-.toggle_btn span {
-  display: block;
-  position: absolute;
-  left: 0;
-  width: 30px;
-  height: 2px;
-  background-color: #666;
-  transition: all .5s;
-}
-.toggle_btn span:nth-child(1) {
-  top: 5px;
-  width: 60px;
-  animation: equalizer01 7000ms infinite;
-}
-.toggle_btn span:nth-child(2) {
-  top: 15px;
-  width: 30px;
-  animation: equalizer02 5000ms infinite;
-  animation-delay: 0.33s;
-}
-.toggle_btn span:nth-child(3) {
-  top: 25px;
-  width: 20px;
-  animation: equalizer02 5000ms infinite;
-}
-.open .toggle_btn span {
-  background-color: #fff;
-  width: 30px;
-}
-.open .toggle_btn span:nth-child(1) {
-  transform: translate(0, 10px) rotate(-45deg);
-  animation: unset;
-}
-.open .toggle_btn span:nth-child(2) {
-  opacity: 0;
-  animation: unset;
-}
-.open .toggle_btn span:nth-child(3) {
-  transform: translate(0, -10px) rotate(45deg);
-  animation: unset;
-}
-@media screen and (max-width: 767px) {
-  .open .toggle_btn {
-    left: 260px;
-  }
-}
 
 
 
-
-
-
-/*============
-#mask
-=============*/
-#mask {
-  display: none;
-}
-.open #mask {
-  display: block;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: #000;
-  opacity: .8;
-  z-index: 2;
-  cursor: pointer;
-  transition: all .5s;
-}
 /*============
 main
 =============*/
@@ -582,4 +385,200 @@ body {
   .site-nav a {
     font-size: 14px;
   }
+}
+
+
+/*ヘッダー*/
+
+  /*ロゴアイコンー*/
+
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  background-color: transparent;  /* ← 完全透明 */
+  z-index: 997;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.0);
+}
+
+.site-logo img {
+  height: 50px;
+}
+
+/* ハンバーガーメニュー（右上） */
+.toggle_btn {
+  display: block;
+  position: fixed;
+  top: 15px;
+  right: 20px;
+  width: 40px;
+  height: 30px;
+  cursor: pointer;
+  z-index: 1001;
+  position: relative;
+  transform: scaleX(-1);
+}
+
+/* 通常時（3本線） */
+.toggle_btn span {
+  position: absolute;
+  left: 0;
+  width: 30px;
+  height: 2px;
+  background-color: #666;
+  transition: all .5s;
+  transform-origin: center center;
+}
+
+.toggle_btn span:nth-child(1) {
+  top: 5px;
+  width: 60px;
+  animation: equalizer01 7000ms infinite reverse;
+}
+.toggle_btn span:nth-child(2) {
+  top: 15px;
+  width: 30px;
+  animation: equalizer02 5000ms infinite reverse;
+  animation-delay: 0.33s;
+}
+.toggle_btn span:nth-child(3) {
+  top: 25px;
+  width: 20px;
+  animation: equalizer02 5000ms infinite reverse;
+}
+
+/* ❌状態（.open） */
+.open .toggle_btn span {
+  background-color: #e60033 !important;
+  width: 30px !important;
+}
+
+.open .toggle_btn span:nth-child(1) {
+  transform: translateY(10px) rotate(-45deg) !important;
+  animation: none !important;
+}
+
+.open .toggle_btn span:nth-child(2) {
+  opacity: 0 !important;
+  animation: none !important;
+}
+
+.open .toggle_btn span:nth-child(3) {
+  transform: translateY(-10px) rotate(45deg) !important;
+  animation: none !important;
+}
+
+
+
+
+nav {
+  position: fixed;
+  top: 0;
+  right: -300px;
+  bottom: 0;
+  width: 300px;
+  background: #fff;
+  overflow-y: auto;
+  transition: right 0.5s ease;
+  z-index: 1000;
+}
+.open nav {
+  right: 0;
+}
+
+
+
+nav .inner {
+  padding: 25px;
+}
+nav .inner ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+nav .inner ul li {
+  border-bottom: 1px solid #ccc;
+}
+nav .inner ul li a {
+  display: block;
+  color: #333;
+  font-size: 14px;
+  padding: 1em;
+  text-decoration: none;
+}
+nav .inner ul li a:hover {
+  background-color: #f0f0f0;
+}
+
+
+/* ハンバーガーメニュー（右上） */
+
+#mask {
+  display: none;
+}
+.open #mask {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #000;
+  opacity: 0.5;
+  z-index: 999;
+  cursor: pointer;
+}
+
+
+
+/* ハンバーガーメニュー（右上） */
+@keyframes equalizer01 {
+  0% { width: 70%; }
+  10% { width: 50%; }
+  20% { width: 100%; }
+  30% { width: 10%; }
+  40% { width: 50%; }
+  50% { width: 70%; }
+  60% { width: 50%; }
+  70% { width: 10%; }
+  80% { width: 100%; }
+  90% { width: 10%; }
+  100% { width: 70%; }
+}
+
+@keyframes equalizer02 {
+  0% { width: 30%; }
+  10% { width: 20%; }
+  20% { width: 40%; }
+  30% { width: 10%; }
+  40% { width: 20%; }
+  50% { width: 30%; }
+  60% { width: 20%; }
+  70% { width: 10%; }
+  80% { width: 40%; }
+  90% { width: 10%; }
+  100% { width: 30%; }
+}
+
+
+/* TOP画像を横幅100%に表示 */
+.top-image {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.top-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto; /* ← 中央揃え */
 }
