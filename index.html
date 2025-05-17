@@ -40,7 +40,7 @@
     <div class="inner">
       <ul>
         <li><a href="#top">ホーム</a></li>
-        <li><a href="#about">参加について</a></li>
+        <li><a href="howto.html">参加について</a></li>
         <li><a href="#news">お知らせ</a></li>
         <li><a href="#entry">参加</a></li>
         <li><a href="#gallery">ギャラリー</a></li>
@@ -57,20 +57,30 @@
  
 
   <!-- ✅ コンテンツ -->
-  <section class="section" id="top" data-aos>
-  <div class="container-tx">
+<section class="section" id="top" data-aos>
+
+<!-- TOP画像 -->
+<div class="top-image-wrapper" data-aos>
+  <img src="images/main1.png" alt="TOP画像" class="top-image-bg">
+</div>
+
+<!-- main2画像（右寄せ） -->
+<a href="index.html" class="top-main2 animate-main2">
+  <img src="images/main2.png" alt="メイン2画像">
+</a>
+
+<!-- ロゴ画像 -->
+<a href="index.html" class="top-logo animate-logo">
+  <img src="images/logo2.png" alt="ロゴ">
+</a>
+
+</section>
+
+   <div class="container-tx2">
     <h1>MNTKFES！</h1>
-  <p>2026年1月9日開催</p>
+    <p>2026年1月9日開催</p>
     <p>井吹宗正×神童拓人WEBオンリーイベント特設サイトです。</p>
   </div>
-
-
-       <!-- TOP画像 -->
-    <div class="top-image" data-aos>
-    <img src="images/top.jpg" alt="TOP画像">
-  </div>
-
-
 
 <div class="container-tx">
   <section class="section" id="news" data-aos>
@@ -162,6 +172,24 @@
       mask.addEventListener('click', () => {
       body.classList.remove('open');
       });
+
+    // ロゴを遅れて表示
+  window.addEventListener('load', () => {
+    const logo = document.querySelector('.top-logo');
+    setTimeout(() => {
+      logo.classList.add('visible');
+  }, 15); // 秒後に表示
+});
+
+    // メイン2を遅れて表示
+  window.addEventListener('load', () => {
+    const main2 = document.querySelector('.top-main2');
+    setTimeout(() => {
+      main2.classList.add('visible');
+  }, 0.2); // 秒後に表示
+});
+
+
   </script>
 </body>
 </html>

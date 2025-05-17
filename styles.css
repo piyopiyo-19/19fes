@@ -113,6 +113,20 @@ body {
   margin: 0 auto;  
 }
 
+
+  /*テキスト含む中央寄せ　余白あり*/
+.container-tx2 {
+  margin-top: 1000px;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+  text-align: center;
+
+}
+
+
+
   /*テキスト含む中央寄せ*/
 .container-tx {
   max-width: 960px;
@@ -246,6 +260,11 @@ body {
   opacity: 1;
   transform: translateY(0);
 }
+
+
+
+
+
 
 
 
@@ -399,7 +418,7 @@ body {
   width: 100%;
   height: 70px;
   background-color: transparent;  /* ← 完全透明 */
-  z-index: 997;
+  z-index: 99;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -408,90 +427,27 @@ body {
 }
 
 .site-logo img {
-  height: 50px;
+  height: 70px;
 }
 
 /* ハンバーガーメニュー（右上） */
-.toggle_btn {
-  display: block;
-  position: fixed;
-  top: 15px;
-  right: 20px;
-  width: 40px;
-  height: 30px;
-  cursor: pointer;
-  z-index: 1001;
-  position: relative;
-  transform: scaleX(-1);
-}
-
-/* 通常時（3本線） */
-.toggle_btn span {
-  position: absolute;
-  left: 0;
-  width: 30px;
-  height: 2px;
-  background-color: #666;
-  transition: all .5s;
-  transform-origin: center center;
-}
-
-.toggle_btn span:nth-child(1) {
-  top: 5px;
-  width: 60px;
-  animation: equalizer01 7000ms infinite reverse;
-}
-.toggle_btn span:nth-child(2) {
-  top: 15px;
-  width: 30px;
-  animation: equalizer02 5000ms infinite reverse;
-  animation-delay: 0.33s;
-}
-.toggle_btn span:nth-child(3) {
-  top: 25px;
-  width: 20px;
-  animation: equalizer02 5000ms infinite reverse;
-}
-
-/* ❌状態（.open） */
-.open .toggle_btn span {
-  background-color: #e60033 !important;
-  width: 30px !important;
-}
-
-.open .toggle_btn span:nth-child(1) {
-  transform: translateY(10px) rotate(-45deg) !important;
-  animation: none !important;
-}
-
-.open .toggle_btn span:nth-child(2) {
-  opacity: 0 !important;
-  animation: none !important;
-}
-
-.open .toggle_btn span:nth-child(3) {
-  transform: translateY(-10px) rotate(45deg) !important;
-  animation: none !important;
-}
-
-
-
 
 nav {
+  display: block;
   position: fixed;
   top: 0;
   right: -300px;
   bottom: 0;
   width: 300px;
-  background: #fff;
+  background: #ffffff;
+  overflow-x: hidden;
   overflow-y: auto;
-  transition: right 0.5s ease;
-  z-index: 1000;
+  transition: 0.5s;
+  z-index: 3;
 }
 .open nav {
   right: 0;
 }
-
 
 
 nav .inner {
@@ -503,7 +459,9 @@ nav .inner ul {
   padding: 0;
 }
 nav .inner ul li {
-  border-bottom: 1px solid #ccc;
+  position: relative;
+  margin: 0;
+  border-bottom: 1px solid #333;
 }
 nav .inner ul li a {
   display: block;
@@ -511,33 +469,13 @@ nav .inner ul li a {
   font-size: 14px;
   padding: 1em;
   text-decoration: none;
+  transition-duration: 0.2s;
 }
 nav .inner ul li a:hover {
-  background-color: #f0f0f0;
+  background: #e4e4e4;
 }
 
-
-/* ハンバーガーメニュー（右上） */
-
-#mask {
-  display: none;
-}
-.open #mask {
-  display: block;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: #000;
-  opacity: 0.5;
-  z-index: 999;
-  cursor: pointer;
-}
-
-
-
-/* ハンバーガーメニュー（右上） */
+/* ハンバーガーメニュー（右上）@keyframes */
 @keyframes equalizer01 {
   0% { width: 70%; }
   10% { width: 50%; }
@@ -566,6 +504,103 @@ nav .inner ul li a:hover {
   100% { width: 30%; }
 }
 
+/*============
+.toggle_btn
+=============*/
+
+
+.toggle_btn {
+  display: block;
+  position: fixed;
+  top: 30px;
+  right: 30px;
+  width: 60px;
+  height: 40px;
+  transform: scaleX(-1);
+  transition: all .5s;
+  cursor: pointer;
+  z-index: 3;
+  position: relative;
+}
+
+.open .toggle_btn {
+  right: 300px;
+}
+
+/* 通常時（3本線） */
+.toggle_btn span {
+  display: block;
+  position: absolute;
+  left: 0;
+  width: 60px;
+  height: 2px;
+  background-color: #666;
+  transition: all .5s;
+}
+
+.toggle_btn span:nth-child(1) {
+  top: 5px;
+  width: 60px;
+  animation: equalizer01 7000ms infinite reverse;
+}
+.toggle_btn span:nth-child(2) {
+  top: 15px;
+  width: 30px;
+  animation: equalizer02 5000ms infinite reverse;
+  animation-delay: 0.33s;
+}
+.toggle_btn span:nth-child(3) {
+  top: 25px;
+  width: 20px;
+  animation: equalizer02 5000ms infinite reverse;
+}
+
+/* ❌状態（.open） */
+.open .toggle_btn span {
+  background-color: #fff; !important;
+  width: 35px !important;
+}
+
+.open .toggle_btn span:nth-child(1) {
+  transform: translateY(10px) rotate(-45deg) !important;
+  animation: unset !important;
+}
+
+.open .toggle_btn span:nth-child(2) {
+  opacity: 0 !important;
+  animation: unset !important;
+}
+
+.open .toggle_btn span:nth-child(3) {
+  transform: translateY(-10px) rotate(45deg) !important;
+  animation: unset !important;
+}
+
+
+
+/* mask */
+
+#mask {
+  display: none;
+}
+.open #mask {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #000;
+  opacity: 0.8;
+  z-index: 2;
+  cursor: pointer;
+  transition: all .5s;
+}
+
+
+
+
+
 
 /* TOP画像を横幅100%に表示 */
 .top-image {
@@ -582,3 +617,110 @@ nav .inner ul li a:hover {
   display: block;
   margin: 0 auto; /* ← 中央揃え */
 }
+
+/* TOP画像ラッパー */
+.top-image-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.top-image-bg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+
+
+/* ロゴ非表示→表示 */
+.animate-logo {
+  opacity: 0;
+  transform: translateY(-30px);
+  transition: opacity 1s ease, transform 1s ease;
+  transition-delay: 1.2s; /* ← TOP画像より遅く出現 */
+}
+
+/* 表示時にフェードイン＆スライドダウン */
+.animate-logo.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* ロゴ（やや左寄り＋アニメーション付き） */
+.top-logo {
+  position: absolute;
+  bottom: 5vh;  /* ロゴ（下位置） */
+  left: -5%;
+  z-index: 10;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s ease, transform 1s ease;
+  transition-delay: 1.2s;
+}
+
+.top-logo.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.top-logo img {
+  width: 90%;
+  max-width: none;
+  height: auto !important;
+  display: block;
+}
+
+#top {
+  position: relative;
+}
+
+
+
+
+--------------
+
+/* メイン2非表示→表示 */
+.animate-main2 {
+  opacity: 0;
+  transform: translateY(-30px);
+  transition: opacity 1s ease, transform 1s ease;
+  transition-delay: 0.1s; /* ← TOP画像より遅く出現 */
+}
+
+/* 表示時にフェードイン＆スライドダウン */
+.animate-main2.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* main2：右寄せ・サイズ追従 */
+.top-main2 {
+  position: absolute;
+  top: 5%;
+  right: 0%;
+  width: 100vw;           /* ← 少し広げる */
+  min-width: 320px;      /* ← スマホでも小さくなりすぎないように */
+  max-width: 2000px;      /* ← 最大幅も余裕を持たせる */
+  z-index: 9;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s ease, transform 1s ease;
+  transition-delay: 0.6s;
+}
+
+.top-main2.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.top-main2 img {
+  width: 100%;             /* ← .top-main2 に対してフィット */
+  height: auto !important;
+  display: block;
+}
+
+
+
