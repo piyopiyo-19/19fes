@@ -20,8 +20,12 @@
       border-top: 1px solid #ddd;
     }
     .section:nth-of-type(odd) {
-      background-color: #fafafa;
+      background-color: rgba(224, 224, 247, 0.178); /*=====奇数sec色===*/
+
     }
+    .section:nth-of-type(even) {
+  background-color: 
+}
   </style>
 </head>
 
@@ -66,32 +70,48 @@
     <!-- 本文 -->
   <main>
     
-      <section class="section" id="page-header">
-    <div class="container">
-      <h1 class="page-title center-text">参加について</h1>
-      <p class="center-text">MNTKFES！への参加に関する情報をご案内します。</p>
-    </div>
-  </section>
-
-    <section class="section" id="schedule" data-aos>
-      <div class="container">
-        <h2 class="subtitle-text2">開催日程</h2>
-        <p>MNTKFES！は2026年1月9日（金）にWEB上で開催されます。</p>
+    <section class="section" id="page-title" data-aos>
+      <div class="container center-text">
+        <h1 class="page-title">参加について</h1>
+        <p>MNTKFES！に参加したい方へのご案内ページです。</p>
       </div>
     </section>
 
-    <section class="section" id="visitor" data-aos>
+    <section class="section" id="event-overview" data-aos>
+      <div class="container center-text2">
+        <h2 class="subtitle-text2">MNTKFES！とは？</h2>
+        <p>MNTKFES！は、pictSQUAREで開催されるWEB同人イベントです。新刊がなくても既刊だけでもOK！</p>
+        <p>展示だけの参加ももちろんOKです。</p>
+        <p><strong>・X（旧Twitter）</strong>：<a href="https://x.com/【アカウント名】" target="_blank">公式アカウント</a></p>
+        <p><strong>・ハッシュタグ</strong>：#19_fes</p>
+      </div>
+    </section>
+
+
+    <section class="section" id="schedule" data-aos>
       <div class="container">
-        <h2 class="subtitle-text2">一般参加について</h2>
-        <p>イベント当日はギャラリーページから各サークルの作品をご覧いただけます。ハッシュタグ <strong>#MNTKFES</strong> でSNS投稿も歓迎です！</p>
+        <h2 class="subtitle-text2">開催情報</h2>
+        <p><strong>開催日時：</strong>2026年1月9日（金）22:00 ～ 2026年1月10日（土）21:50</p>
+        <p><strong>サークル申込期間：</strong>2025年5月10日（日）～ 12月9日（火）</p>
+        <p><strong>募集数：</strong>24sp（状況により変動する可能性あり）</p>
+        <p><strong>参加費：</strong>一般参加：無料 ／ サークル参加：550円（pictSQUARE利用料）</p>
+      </div>
+    </section>
+
+        <section class="section" id="easy-entry" data-aos>
+      <div class="container center-text2">
+        <h2 class="subtitle-text2">参加はお気軽に！</h2>
+        <p><img src="images/friendly-summary.png" alt="参加しやすいイベント" style="max-width: 500px; width: 100%;"></p>
       </div>
     </section>
 
     <section class="section" id="participation" data-aos>
       <div class="container">
         <h2 class="subtitle-text2">参加方法</h2>
+      <div class="tab-wrapper">
+      
         <div class="tab-buttons">
-          <button onclick="showTab('circle')">サークル参加者様向け</button>
+          <button class="active" onclick="showTab('circle')">サークル参加者様向け</button>
           <button onclick="showTab('general')">一般参加者様向け</button>
         </div>
 
@@ -102,11 +122,11 @@
             <p><img src="images/s-hutu-2.png" alt="サ説明2"></p>
             <p><img src="images/s-hutu-3.png" alt="サ説明3"></p>
             <p><img src="images/s-hutu-4.png" alt="サ説明4"></p>
-            </div>
           </div>
         </div>
+     
 
-        <div class="tab-content" id="general" style="display: none;">
+        <div class="tab-content container" id="general" style="display: none;">
           <p>一般参加者様向けの閲覧ガイドを掲載予定です。</p>
           <div class="image-wrapper fade-up" id="general-image">
             <p><img src="images/i-hutu-1.png" alt="一般説明1"></p>
@@ -116,19 +136,27 @@
           </div>
         </div>
       </div>
+    </div>
     </section>
 
-     <section class="section" id="schedule" data-aos>
+    <section class="section" id="notices" data-aos>
       <div class="container">
-        <h2 class="subtitle-text2">注意事項</h2>
-        <p>・PICTSQUARE様の利用規約をご確認ください。</p>
-        <p>・「ドメイン取得・管理機能」とはメイン名の管理その他のドメインに関するサービスをいいます。</p>
-        <p>・「本サイト」とは、本サービスの提供に関して弊社が運営するウェブサイトをいいます。</p>
-        <p>・本免責事項、および、当サイトに掲載しているコンテンツ・情報は、予告なしに変更・削除されることがあります。予めご了承下さい。</p>
+        <h2 class="subtitle-text2">注意事項・禁止事項</h2>
+        <h3>⚠ 注意事項</h3>
+        <ul>
+          <li>pictSQUAREの動作環境をご確認の上ご参加ください。</li>
+          <li>通販・展示内容はサークル責任でご対応ください。</li>
+          <li>一部スペースは展示のみ・通販非対応の場合があります。</li>
+        </ul>
+        <h3>🚫 禁止事項</h3>
+        <ul>
+          <li>無断転載・スクリーンショットのSNS投稿（明記がある場合を除く）</li>
+          <li>誹謗中傷・迷惑行為</li>
+        </ul>
       </div>
-    </section>   
-    
-  </main>
+    </section>
+  </main> 
+
 
   <script>
     function fadeImage(imageEl) {
@@ -155,6 +183,20 @@
         circle.style.display = 'none';
         fadeImage(generalImage);
       }
+
+      document.querySelectorAll(".tab-buttons button").forEach(btn => {
+      btn.classList.remove("active");
+      });
+      event.target.classList.add("active");
+
+      // ✅ activeクラス切り替え
+      document.querySelectorAll(".tab-buttons button").forEach(btn => {
+      btn.classList.remove("active");
+      });
+      const clicked = (tab === 'circle') ? document.querySelector('.tab-buttons button:nth-child(1)')
+      : document.querySelector('.tab-buttons button:nth-child(2)');
+      clicked.classList.add("active");
+
     }
 
     // スクロール演出

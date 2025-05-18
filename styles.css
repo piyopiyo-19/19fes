@@ -56,6 +56,7 @@ body {
   letter-spacing: .025em;
   line-height: 1.8;
   color: #2a2b55;
+  font-weight: 500;
 }
 * {
   box-sizing: border-box;
@@ -67,6 +68,14 @@ body {
 #top.section {
   padding-top: 10px;
 }
+
+/*============
+body
+=============*/
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+/*==============*/
 
 
   /*グラデボタン*/
@@ -146,6 +155,12 @@ body {
   text-align: center;
 }
 
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
 
  
 
@@ -159,22 +174,13 @@ body {
 .page-title {
     display: flex;
     font-weight: 700;
-    font-size: 1.65rem;
+    font-size: 2.8rem;
     line-height: 1.5;
     letter-spacing: .02em;
     content: attr(data-label);
     justify-content: center;
     align-items: center;
     color: #333333;
-}
-
-.page-title{
-    color: #333333;
-    font-weight: 700;
-    font-size: 2.4rem;
-    line-height: 1.5;
-    letter-spacing: .02em;
-    content: attr(data-label);
 }
 
 .page-title::before,
@@ -200,6 +206,8 @@ body {
  /*見出し1*/
 .subtitle-text2 {
   border-bottom: 3px dotted #363346;
+  font-weight: 700;
+  font-size: 2rem;
 }
 
 
@@ -311,20 +319,44 @@ body {
   justify-content: center;
   gap: 10px;
   margin-bottom: 1em;
+  margin-bottom: 0;
+  border-radius: 10px 10px 0 0;
+  overflow: hidden;
 }
 .tab-buttons button {
   padding: 10px 20px;
-  border: 1px solid #333;
-  background-color: #fff;
+  border: none;
+  background-color: #eee;
+  font-weight: bold;
   cursor: pointer;
-  font-size: 14px;
+  font-size: 16px;
   transition: background-color 0.3s;
+  flex: 1;
+  height: 55px;
 }
 .tab-buttons button:hover {
   background-color: #f0f0f0;
 }
 .tab-content {
   padding: 10px 0;
+}
+
+.tab-buttons button.active {
+  background-color: #8785f7; /* サークル：オレンジ */
+  color: #fff;
+}
+
+.tab-wrapper {
+  max-width: 960px;
+  margin: 0 auto;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+.tab-content {
+  padding: 20px;
 }
 
 
@@ -338,18 +370,9 @@ main {
 }
 main h1 {
   font-family: 'Open Sans', sans-serif;
-  font-weight: 400;
   text-align: center;
 }
-/*============
-body
-=============*/
-body {
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 400;
-}
 
-/*==============*/
 
 
 .logo {
