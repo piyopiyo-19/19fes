@@ -317,6 +317,7 @@ body {
 .tab-buttons {
   display: flex;
   justify-content: center;
+  flex-wrap: nowrap; 
   gap: 10px;
   margin-bottom: 1em;
   margin-bottom: 0;
@@ -342,7 +343,7 @@ body {
 }
 
 .tab-buttons button.active {
-  background-color: #8785f7; /* サークル：オレンジ */
+  background-color: #8785f7; /* サークル：色 */
   color: #fff;
 }
 
@@ -719,7 +720,7 @@ nav .inner ul li a:hover {
 /*============= 
 レスポンシブ対応 
 ==============*/
-@media (max-width: 768px) {
+@media (max-width: 600px) {
   .site-nav {
     display: none;
   }
@@ -763,9 +764,29 @@ nav .inner ul li a:hover {
   .container-tx2 {
     margin-top: 40px;
   }
+
+    /* ▼ 中央寄せの幅調整（スマホ用） */
+  .container,
+  .tab-wrapper {
+    padding: 0 0px;
+    max-width: 100%;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .tab-buttons {
+    flex-wrap: nowrap;
+    flex: 1;
+    min-width: 0; 
+  }
+
+  .tab-buttons button {
+    height: 48px;
+    font-size: 15px;
+  }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   body {
     font-size: 14px;
     line-height: 1.6;
@@ -780,3 +801,5 @@ nav .inner ul li a:hover {
     font-size: 14px;
   }
 }
+
+
