@@ -862,8 +862,8 @@ nav .inner ul li a:hover {
 
     /* ▼ 中央寄せの幅調整（スマホ用） */
   .container {
-    padding-left: 1px;
-    padding-right: 1px;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
     max-width: 110%;
     box-sizing: border-box;
   }
