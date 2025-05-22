@@ -1,5 +1,5 @@
 /*============= 
-背景パターン 
+背景パターン 設定
 ==============*/
 .bg_pattern {
   position: fixed;
@@ -38,7 +38,7 @@
 }
 
 /*============= 
-ベース設定 
+共通設定 
 ==============*/
 img {
   max-width: 100%;
@@ -52,7 +52,7 @@ html, body {
   padding: 0;
 }
 body {
-  font-family: YuGothic, "游ゴシック体", "Yu Gothic", "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+  font-family: 'Open Sans', sans-serif;/*フォント名*/
   letter-spacing: .025em;
   line-height: 1.8;
   color: #2a2b55;
@@ -69,13 +69,7 @@ body {
   padding-top: 10px;
 }
 
-/*============
-body
-=============*/
-body {
-  font-family: 'Open Sans', sans-serif;
-}
-/*==============*/
+
 
 
   /*グラデボタン*/
@@ -83,7 +77,7 @@ body {
   position: relative;
   display: inline-block;
   width: 100%;
-  padding: 1.5em 4.0%;
+  padding: 1.8em 4.0%;
   font-size: 18px;
   max-width: 300px;
   margin: 0 auto;  
@@ -99,6 +93,7 @@ body {
   text-decoration: none;
   text-align: center;
   border-radius:3px;
+  margin-top: 1em;
 }
 
 .button-gradation:hover {
@@ -119,20 +114,16 @@ body {
   border-radius:5px;
 }
 
- /*ボタン？*/
 
-._a {
-  max-width: 300px;
-  margin: 0 auto;  
-}
+
 
 
   /*テキスト含む中央寄せ　余白あり*/
 .container-tx2 {
-  margin-top: 1000px;
+  margin-top: 500px;
   max-width: 960px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 10px;
   position: relative;
   text-align: center;
 
@@ -166,15 +157,13 @@ body {
 
 
 
+/* ---------------見出し系 ---------------------*/
 
-
-
-
- /*ページタイトル*/
+ /*ページタイトル（ページメインタイトル）*/
 .page-title {
     display: flex;
     font-weight: 700;
-    font-size: 2.8rem;
+    font-size: 2.4rem;
     line-height: 1.5;
     letter-spacing: .02em;
     content: attr(data-label);
@@ -202,12 +191,101 @@ body {
 }
 
 
-
  /*見出し1*/
-.subtitle-text2 {
-  border-bottom: 3px dotted #363346;
-  font-weight: 700;
-  font-size: 2rem;
+
+.subtitle-text2{
+  position: relative;
+  padding: .5em .5em .5em calc(15px + .5em);/*テキスト周りの余白*/
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 15px 50%);
+  background-color: #16a9ba;/*背景色*/
+  color: #fff;/*文字色*/
+}
+.subtitle-text2::before,
+.subtitle-text2::after{
+  position: absolute;
+  left: 0;
+  content: '';
+  width: 100%;
+  height: 2px;/*上下のボーダーの太さ*/
+  background-color: #fff;/*上下のボーダーの色*/
+}
+.subtitle-text2::before{
+  top: 3px; 
+}
+.subtitle-text2::after{
+  bottom: 3px;
+}
+
+ /*見出し　ナンバーつき*/
+
+.heading12 {
+	position: relative;
+	font-size: 26px;
+}
+
+.heading12::before {
+	content: attr(data-number);
+	display: inline-block;
+	margin-right: 20px;
+	color: #498ee0;
+	font-size: 30px;
+	border-bottom: 1px solid #498ee0;
+}
+
+ /*見出し　チェック*/
+
+.heading-27 {
+    display: flex;
+    align-items: center;
+    column-gap: 8px;
+    color: #333333;
+}
+
+.heading-27::before {
+    width: 0.8em;
+    height: 0.4em;
+    border-bottom: 4px solid #2589d0;
+    border-left: 4px solid #2589d0;
+    transform: rotate(-45deg) translate(2px, -2px);
+    content: '';
+}
+
+/* ---------------見出し系ここまで ---------------------*/
+
+
+
+ /*ポイントボックス*/
+.box27 {
+    position: relative;
+    margin: 3.5em 0 2em; /* ← 上側のマージンを増やす（3em） */
+    padding: 2em 1.5em 1.5em; /* ← 文字の余白 */
+    border: solid 3.5px #62c1ce;
+    border-radius: 0 15px 15px 15px; /* ← 丸角 */
+    background-color: #ffffff;
+}
+.box27 .box-title {
+    position: absolute;
+    top: -39px;
+    left: -2px;
+    padding: 0 20px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 18px;
+    background: #62c1ce;
+    color: #ffffff;
+    font-weight: bold;
+    border-radius: 10px 10px 0 0;
+}
+.box27 p {
+    margin: 0; 
+    padding: 0;
+}
+
+.box27 p img {
+  display: block;
+  margin: 1.5em auto; /* 上下に余白（中央寄せ） */
+  max-width: 100%;
+  height: auto;
 }
 
 
@@ -220,13 +298,27 @@ body {
   text-align: center;
   margin: 20px 0;
 }
+
 .image-wrapper img {
   max-width: 100%;
   height: auto;
   display: inline-block;
-  border: 2px #e4e4e4 solid;
+  padding: 20px;
 }
 
+
+
+
+ /*テキスト左寄せ*/
+ .center-left {
+text-align: left;
+}
+
+ /*Pインデント*/
+p.indent{
+ text-indent: 1em;
+ line-height: 1.8em; /* 行の高さを指定する */
+}
 
 
 
@@ -236,7 +328,7 @@ body {
  .scroller {
     margin: 0 auto;
     max-width: 90%;
-    max-height: 100px;
+    max-height: 120px;
     overflow-y: scroll;
     background-color: #edf8fa;
     border: solid 2px #84d7eb;
@@ -246,6 +338,16 @@ body {
 }
 
 
+
+  /*スクロールバー用テキスト*/
+.container-tx-scr {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+  line-height: 60%;
+  font-size: 13px;
+}
 
 
 
@@ -348,6 +450,7 @@ body {
 }
 
 .tab-wrapper {
+  position: relative;
   max-width: 960px;
   margin: 0 auto;
   background-color: #fff;
@@ -355,9 +458,11 @@ body {
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  min-height: 200px; 
+  transition: min-height 0.3s ease;
 }
 .tab-content {
-  padding: 20px;
+  padding: 2em;
 }
 
 
@@ -367,7 +472,7 @@ body {
 main
 =============*/
 main {
-  padding: 50px;
+  padding: 10px;
 }
 main h1 {
   font-family: 'Open Sans', sans-serif;
@@ -418,7 +523,7 @@ main h1 {
   height: 70px;
 }
 
-/* ハンバーガーメニュー（右上） */
+/* ---------------ハンバーガーメニュー ---------------------*/
 
 nav {
   display: block;
@@ -463,7 +568,7 @@ nav .inner ul li a:hover {
   background: #e4e4e4;
 }
 
-/* ハンバーガーメニュー（右上）@keyframes */
+/* ハンバーガーメニュー　@keyframes */
 @keyframes equalizer01 {
   0% { width: 70%; }
   10% { width: 50%; }
@@ -493,7 +598,7 @@ nav .inner ul li a:hover {
 }
 
 /*============
-.toggle_btn
+.toggle_btn（ハンバーガーメニュー　ボタン）
 =============*/
 
 
@@ -587,6 +692,7 @@ nav .inner ul li a:hover {
 
 
 
+/* ---------------ハンバーガーメニュー（ここまで） ---------------------*/
 
 
 
@@ -768,7 +874,7 @@ nav .inner ul li a:hover {
     /* ▼ 中央寄せの幅調整（スマホ用） */
   .container,
   .tab-wrapper {
-    padding: 0 0px;
+    padding: 0 12px;
     max-width: 100%;
     width: 100%;
     box-sizing: border-box;
