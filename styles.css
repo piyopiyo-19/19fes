@@ -101,6 +101,7 @@ main h1 {
 
 
   /*グラデボタン*/
+/* 通常時：グラデ背景＋白文字 */
 .button-gradation {
   position: relative;
   display: inline-block;
@@ -108,28 +109,33 @@ main h1 {
   padding: 1.8em 4.0%;
   font-size: 18px;
   max-width: 300px;
-  margin: 0 auto;  
-  color: #00b5ad;
+  margin: 0 auto;
+  color: #fff;
   text-decoration: none;
   user-select: none;
-  background: #fff;
-  transition: 0.3s;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  background-size: 300% auto;
-  text-decoration: none;
-  text-align: center;
-  border-radius:3px;
-  margin-top: 1em;
-}
-
-.button-gradation:hover {
-  color: #fff;
   background: -webkit-linear-gradient(top left, #46dbae, #0e9ac5);
-  border-radius:8px;
+  background-size: 300% auto;
+  text-align: center;
+  border-radius: 5px;
+  transition: 0.3s;
+  z-index: 0;
 }
 
+/* ホバー時：白背景＋文字色を青に */
+.button-gradation:hover {
+  background: #fff;
+  color: #322d7c;
+  border: 2px solid #d3e8f0;
+}
+
+/* クリック時（:active）：グラデ背景濃いめに */
+.button-gradation:active {
+  background: -webkit-linear-gradient(top left, #0e9ac5, #46dbae);
+  color: #fff;
+  transform: scale(0.98);
+}
+
+/* 外枠の演出：任意で残す */
 .button-gradation::before {
   position: absolute;
   top: -2px;
@@ -139,7 +145,7 @@ main h1 {
   height: calc(100% + 4px);
   content: "";
   background: -webkit-linear-gradient(top left, #46dbae, #0e9ac5);
-  border-radius:5px;
+  border-radius: 6px;
 }
 
 
@@ -180,10 +186,20 @@ main h1 {
   padding: 0 20px;
 }
 
+.container-tx img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0.5em auto;
+}
 
- 
 
-
+  /*テキスト内のロゴ*/
+.text_img {
+  height: 1em; /* テキストと同じ高さに */
+  vertical-align: middle; /* テキストと縦方向を揃える */
+  margin: 0 0.2em 0 0; /* 右側だけにちょっと余白 */
+}
 
 /* ---------------見出し系 ---------------------*/
 
@@ -227,6 +243,7 @@ main h1 {
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 15px 50%);
   background-color: #959cff;/*背景色*/
   color: #fff;/*文字色*/
+  margin-left: -1em; /* 見出しだけ外側にずらす */
 }
 .subtitle-text2::before,
 .subtitle-text2::after{
@@ -285,8 +302,8 @@ main h1 {
  /*ポイントボックス*/
 .box27 {
     position: relative;
-    margin: 3.5em 0 2em; /* ← 上側のマージンを増やす（3em） */
-    padding: 2em 1.5em 1.5em; /* ← 文字の余白 */
+    margin: 1em 0 2em; /* ← 上側のマージンを増やす（3em） */
+    padding: 1em 1.5em 1.5em 1.5em; /* ← 文字の余白 */
     border: solid 3.5px #62c1ce;
     border-radius: 0 15px 15px 15px; /* ← 丸角 */
     background-color: #ffffff;
@@ -345,7 +362,12 @@ text-align: left;
  /*Pインデント*/
 p.indent{
  text-indent: 1em;
- line-height: 0.8em; /* 行の高さを指定する */
+ line-height: 0.7em; /* 行の高さを指定する */
+}
+
+p.indent-2{
+ text-indent: 1em;
+ line-height: 1.3em; /* 行の高さを指定する */
 }
 
 
@@ -876,6 +898,12 @@ nav .inner ul li a:hover {
     box-sizing: border-box;
   }
 
+ /*見出し　ナンバーつき */
+  .heading12 {
+    font-size: 1.2rem; /* ← お好みで調整（例: 1rem〜1.4rem） */
+  }
+
+
 }
 
 @media (max-width: 768px) {
@@ -892,6 +920,30 @@ nav .inner ul li a:hover {
   .site-nav a {
     font-size: 14px;
   }
+}
+
+@media screen and (max-width: 768px) {
+  .box27 {
+    padding: 1.5em;
+    margin: 2em 0;
+  }
+
+  .indent-2 {
+    padding-left: 1em;
+    margin-left: 0em;
+  }
+
+  .container-tx {
+  margin: 0;
+  padding: 0;
+}
+
+.container-tx img {
+  display: block;
+  margin: 0.5em auto; /* ← 上下の隙間を狭めたい場合はここを調整 */
+  max-width: 100%;
+  height: auto;
+}
 }
 
 /* ハンバーガーメニュー　@keyframes */
