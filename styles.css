@@ -71,6 +71,34 @@ body {
 
 
 
+/*============
+main
+=============*/
+main {
+  padding: 10px;
+}
+main h1 {
+  font-family: 'Open Sans', sans-serif;
+  text-align: center;
+}
+
+
+
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.site-nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+.site-nav a:hover {
+  text-decoration: underline;
+}
+
 
   /*グラデボタン*/
 .button-gradation {
@@ -197,7 +225,7 @@ body {
   position: relative;
   padding: .5em .5em .5em calc(15px + .5em);/*テキスト周りの余白*/
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 15px 50%);
-  background-color: #16a9ba;/*背景色*/
+  background-color: #959cff;/*背景色*/
   color: #fff;/*文字色*/
 }
 .subtitle-text2::before,
@@ -317,7 +345,7 @@ text-align: left;
  /*Pインデント*/
 p.indent{
  text-indent: 1em;
- line-height: 1.8em; /* 行の高さを指定する */
+ line-height: 0.8em; /* 行の高さを指定する */
 }
 
 
@@ -379,43 +407,8 @@ p.indent{
 
 
 
+/* ---------------タブ切り替え ---------------------*/
 
-
-
-._a a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  padding: 2.0em 1.0em;
-  border: 1px solid #363346;
-  background: linear-gradient(to right, #ffffff 50%, #363346 50%);
-  background-size: 200% auto;
-  color: #363346;
-  font-size: 12px;
-  text-decoration: none;
-  text-align: center;
-  transition: .3s;
-  position: relative;
-}
-._a a:after {
-  content: "";
-  position: absolute;
-  right: -5px;
-  bottom: -5px;
-  width: 100%;
-  height: 100%;
-  border-right: 1px solid #3d374e;
-  border-bottom: 1px solid #363346;
-}
-._a a:hover {
-  color: #ffffff;
-  background-position: -100% 0;
-}
-
-/*============= 
-タブ切り替え 
-==============*/
 .tab-buttons {
   display: flex;
   justify-content: center;
@@ -425,27 +418,30 @@ p.indent{
   margin-bottom: 0;
   border-radius: 10px 10px 0 0;
   overflow: hidden;
+  display: flex;
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }
 .tab-buttons button {
-  padding: 10px 20px;
+  padding:0.8em;
   border: none;
   background-color: #eee;
   font-weight: bold;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 1em;
   transition: background-color 0.3s;
   flex: 1;
   height: 55px;
+  text-align: center;
 }
 .tab-buttons button:hover {
   background-color: #f0f0f0;
 }
-.tab-content {
-  padding: 10px 0;
-}
+
 
 .tab-buttons button.active {
-  background-color: #8785f7; /* サークル：色 */
+  background-color: #6e64f8; /* サークル：色 */
   color: #fff;
 }
 
@@ -468,41 +464,14 @@ p.indent{
 
 
 
-/*============
-main
-=============*/
-main {
-  padding: 10px;
-}
-main h1 {
-  font-family: 'Open Sans', sans-serif;
-  text-align: center;
-}
-
-
-
-.logo {
-  font-size: 20px;
-  font-weight: bold;
-  margin: 0;
-}
-
-.site-nav a {
-  text-decoration: none;
-  color: #333;
-  font-weight: 500;
-}
-.site-nav a:hover {
-  text-decoration: underline;
-}
 
 
 
 
+/* ---------------ヘッダー＆ハンバーガーメニュー ---------------------*/
 
 /*ヘッダー*/
-
-  /*ロゴアイコンー*/
+/*ロゴアイコンー*/
 
 .site-header {
   position: fixed;
@@ -523,7 +492,7 @@ main h1 {
   height: 70px;
 }
 
-/* ---------------ハンバーガーメニュー ---------------------*/
+/* ハンバーガーメニュー */
 
 nav {
   display: block;
@@ -670,9 +639,7 @@ nav .inner ul li a:hover {
 }
 
 
-
 /* mask */
-
 #mask {
   display: none;
 }
@@ -689,13 +656,10 @@ nav .inner ul li a:hover {
   cursor: pointer;
   transition: all .5s;
 }
+/* ---------------ヘッダー＆ハンバーガーメニュー（ここまで） ---------------------*/
 
 
-
-/* ---------------ハンバーガーメニュー（ここまで） ---------------------*/
-
-
-
+/* ---------------TOP　メイン画像 ---------------------*/
 /* TOP画像を横幅100%に表示 */
 .top-image {
   width: 100%;
@@ -822,9 +786,12 @@ nav .inner ul li a:hover {
   display: block;
 }
 
+/* ---------------TOP　メイン画像（ここまで） ---------------------*/
+
+
 
 /*============= 
-レスポンシブ対応 
+スマホ表示 
 ==============*/
 @media (max-width: 600px) {
   .site-nav {
@@ -872,24 +839,43 @@ nav .inner ul li a:hover {
   }
 
     /* ▼ 中央寄せの幅調整（スマホ用） */
-  .container,
+  .container {
+    padding-left: 1px;
+    padding-right: 1px;
+    max-width: 110%;
+    box-sizing: border-box;
+  }
+
+
+
   .tab-wrapper {
-    padding: 0 15px;
-    max-width: 100%;
+    padding: 0;
+    margin: 0 auto;
     width: 100%;
     box-sizing: border-box;
   }
 
   .tab-buttons {
     flex-wrap: nowrap;
+    display: flex; 
     flex: 1;
+    gap: 6px;              /* ← 隙間を少しだけ空けたい場合（例：4px） */
     min-width: 0; 
   }
 
   .tab-buttons button {
+    flex: 1;   
     height: 48px;
+    margin: 0;  
+    padding: 0.5em;
     font-size: 15px;
   }
+  .tab-buttons,
+  .tab-content {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
 }
 
 @media (max-width: 768px) {
@@ -906,6 +892,35 @@ nav .inner ul li a:hover {
   .site-nav a {
     font-size: 14px;
   }
+}
+
+/* ハンバーガーメニュー　@keyframes */
+@keyframes equalizer01 {
+  0% { width: 70%; }
+  10% { width: 50%; }
+  20% { width: 100%; }
+  30% { width: 10%; }
+  40% { width: 50%; }
+  50% { width: 70%; }
+  60% { width: 50%; }
+  70% { width: 10%; }
+  80% { width: 100%; }
+  90% { width: 10%; }
+  100% { width: 70%; }
+}
+
+@keyframes equalizer02 {
+  0% { width: 30%; }
+  10% { width: 20%; }
+  20% { width: 40%; }
+  30% { width: 10%; }
+  40% { width: 20%; }
+  50% { width: 30%; }
+  60% { width: 20%; }
+  70% { width: 10%; }
+  80% { width: 40%; }
+  90% { width: 10%; }
+  100% { width: 30%; }
 }
 
 

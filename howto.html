@@ -116,18 +116,7 @@
       <div class="tab-content" id="circle" style="display: block;">
         <p>サークル参加に関するガイドや規約を掲載予定です。</p>
 
-        <div class="box27">
-          <span class="box-title">はじめに</span>
-          <h2 class="heading-27">サークルの出展区分について</h2>
-          <p class="indent">WEBオンリーは自身のサークルスペースに頒布物の通販ページや展示作品のリンクを貼ることで、ブース内での表示ができるシステムになっています。</p>
-          <p class="container-tx"><img src="images/kubun-1.png" alt="はじめに1"></p>
-          <p class="indent">pictSQUAREでは、系列サービスのpictSPACE、pictSPACE-ONEを利用するか、BOOTHやpixiv等の外部サービスを利用するかで、申し込みの出展区分が異なります。</p>
-          <p class="container-tx"><img src="images/kubun-3.png" alt="はじめに2"></p>
-          <p class="indent">それぞれの違いは下記のコラムにまとめていますので、ご自身に合った出展区分をみつけてください！</p>
-          <p class="indent">※出展区分は後からでも変更可能です！</p>
-        </div>
-
-        <div class="image-wrapper fade-up show" id="circle-image">
+        <div class="image-wrapper fade-up" id="circle-image">
           <div class="center-left">
             <h2 class="heading12" data-number="01">PICTSQUAREに会員登録しよう</h2>
             <p class="indent">メールアドレス、Twitter連携が選べます</p>
@@ -152,6 +141,16 @@
           <div class="center-left">
             <h2 class="heading12" data-number="04">頒布品・展示品を登録しよう</h2>
             <p><img src="images/s-hutu-4.png" alt="サ説明4"></p>
+                    <div class="box27">
+          <span class="box-title">はじめに</span>
+          <h2 class="heading-27">サークルの出展区分について</h2>
+          <p class="indent">WEBオンリーは自身のサークルスペースに頒布物の通販ページや展示作品のリンクを貼ることで、ブース内での表示ができるシステムになっています。</p>
+          <p class="container-tx"><img src="images/kubun-1.png" alt="はじめに1"></p>
+          <p class="indent">pictSQUAREでは、系列サービスのpictSPACE、pictSPACE-ONEを利用するか、BOOTHやpixiv等の外部サービスを利用するかで、申し込みの出展区分が異なります。</p>
+          <p class="container-tx"><img src="images/kubun-3.png" alt="はじめに2"></p>
+          <p class="indent">それぞれの違いは下記のコラムにまとめていますので、ご自身に合った出展区分をみつけてください！</p>
+          <p class="indent">※出展区分は後からでも変更可能です！</p>
+        </div>
           </div>
 
           <div class="center-left">
@@ -262,10 +261,18 @@
     });
     document.querySelectorAll('[data-aos]').forEach(el => observer.observe(el));
 
-    window.addEventListener('load', () => {
-      fadeImage(document.getElementById('circle-image'));
-    });
+    // 初回表示時に .show を付ける前に、一度すべて外す
+window.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.fade-up').forEach(el => el.classList.remove('show'));
+});
 
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    fadeImage(document.getElementById('circle-image'));
+  }, 100);
+});
+
+    // ハンバーガーメニュー
     const toggle = document.getElementById("menu-toggle");
     const body = document.body;
     const mask = document.getElementById("mask");
