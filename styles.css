@@ -863,6 +863,87 @@ nav .inner ul li a:hover {
 /* ---------------TOP　メイン画像（ここまで） ---------------------*/
 
 
+/* ---------------フッター ---------------------*/
+
+.site-footer {
+  background-color: #a1c0e9;
+  color: #fff;
+  font-size: 14px;
+  padding: 40px 20px 20px;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-left {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.footer-logo {
+  width: 80px;
+  height: auto;
+}
+
+.footer-info p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+.footer-right {
+  text-align: right;
+}
+
+.footer-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.footer-nav li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.footer-social a img {
+  width: 40px;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 12px;
+  opacity: 0.8;
+}
+
+/* ✅ PC表示用フッターはスマホでは非表示 */
+.site-footer {
+  display: block;
+}
+
+.footer-mobile {
+  display: none;
+}
+/* ---------------フッター（ここまで） ---------------------*/
+
+
+
+
+
 
 /*============= 
 スマホ表示 
@@ -979,7 +1060,7 @@ nav .inner ul li a:hover {
 @media (max-width: 768px) {
   body {
     font-size: 13px;
-    line-height: 1.6;
+    line-height: 1.5rem;
   }
   .section {
     padding: 60px 15px;
@@ -1023,13 +1104,17 @@ nav .inner ul li a:hover {
 }
 
   .text-col {
+    flex: 1;
     text-align: left;
-    font-size: 14px;
+    font-size: 0.9rem;     /* ← 追加ここ */
+    line-height: 1.6;
   }
 
  /*Pインデント*/
 p.indent{
- margin-left: 1em;
+  margin-left: 1em;
+  line-height: 0.5em;
+  letter-spacing: 0.01em;
 }
 
 p.indent-2{
@@ -1052,6 +1137,70 @@ p.indent-2{
     display: block;
     margin-left: -5%;
     margin-right: 0;
+  }
+
+
+
+   /*スマホフッター */
+
+.footer-mobile {
+  background-color: #a1c0e9;
+  color: #fff;
+  text-align: center;
+  font-size: 13px;
+  padding: 30px 15px;
+}
+
+.footer-logo {
+  width: 100px;
+  margin: 0 auto 10px;
+}
+
+.footer-sns a img {
+  width: 40px;
+  margin: 0 8px;
+}
+
+.footer-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px 15px;
+  margin: 20px 0;
+}
+
+.footer-columns a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer-groups a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #11142b;
+  color: #fff;
+  padding: 12px;
+  margin: 5px 0;
+  text-decoration: none;
+}
+
+.footer-groups span {
+  font-size: 18px;
+}
+
+.footer-copy {
+  margin-top: 20px;
+  font-size: 11px;
+  opacity: 0.6;
+}
+
+/* ✅ スマホ（768px以下）では表示切り替え */
+  .site-footer {
+    display: none;
+  }
+
+  .footer-mobile {
+    display: block;
   }
 
 }
