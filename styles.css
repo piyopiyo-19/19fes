@@ -978,8 +978,8 @@ nav .inner ul li a:hover {
 
 @media (max-width: 768px) {
   body {
-    font-size: 13px;
-    line-height: 1.6;
+    font-size: 14px;
+    line-height: 1.5;
   }
   .section {
     padding: 60px 15px;
