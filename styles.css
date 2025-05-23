@@ -186,6 +186,14 @@ main h1 {
   padding: 0 20px;
 }
 
+
+ /*タブの余白*/
+.container-tab {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 1px;
+}
+
 .container-tx img {
   max-width: 100%;
   height: auto;
@@ -200,6 +208,38 @@ main h1 {
   vertical-align: middle; /* テキストと縦方向を揃える */
   margin: 0 0.2em 0 0; /* 右側だけにちょっと余白 */
 }
+
+
+/* 横並び用：PC限定 */
+@media (min-width: 769px) {
+  .image-text-row {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin: 2em 0;
+    
+  }
+
+  .image-col {
+    flex: 0 0 40%; /* 画像は左40%の幅 */
+  }
+
+  .text-col {
+    flex: 1; /* テキストは残り */
+    text-align: left;
+  }
+
+  .image-col img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+}
+
+
+
+
+
 
 /* ---------------見出し系 ---------------------*/
 
@@ -284,6 +324,7 @@ main h1 {
     align-items: center;
     column-gap: 8px;
     color: #333333;
+    font-size: 2rem;
 }
 
 .heading-27::before {
@@ -303,7 +344,7 @@ main h1 {
 .box27 {
     position: relative;
     margin: 1em 0 2em; /* ← 上側のマージンを増やす（3em） */
-    padding: 1em 1.5em 1.5em 1.5em; /* ← 文字の余白 */
+    padding: 1em 2em 2em 2em; /* ← 文字の余白 */
     border: solid 3.5px #62c1ce;
     border-radius: 0 15px 15px 15px; /* ← 丸角 */
     background-color: #ffffff;
@@ -326,11 +367,17 @@ main h1 {
     padding: 0;
 }
 
-.box27 p img {
+.box27 img {
   display: block;
   margin: 1.5em auto; /* 上下に余白（中央寄せ） */
-  max-width: 100%;
+  width: 100%; 
+  max-width: none;
   height: auto;
+}
+
+.box27 img {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
 }
 
 
@@ -352,6 +399,13 @@ main h1 {
 }
 
 
+ /*画像中央寄せ2*/
+.center-img {
+  display: block;
+  margin: 0 auto;
+}
+
+
 
 
  /*テキスト左寄せ*/
@@ -361,12 +415,10 @@ text-align: left;
 
  /*Pインデント*/
 p.indent{
- text-indent: 1em;
  line-height: 0.7em; /* 行の高さを指定する */
 }
 
 p.indent-2{
- text-indent: 1em;
  line-height: 1.3em; /* 行の高さを指定する */
 }
 
@@ -815,7 +867,7 @@ nav .inner ul li a:hover {
 /*============= 
 スマホ表示 
 ==============*/
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .site-nav {
     display: none;
   }
@@ -863,11 +915,27 @@ nav .inner ul li a:hover {
     /* ▼ 中央寄せの幅調整（スマホ用） */
   .container {
     padding-left: 0.6em;
-    padding-right: 0.6em;
+    padding-right: 1em;
     max-width: 110%;
     box-sizing: border-box;
   }
 
+   /*タブの余白*/
+ .container-tab {
+  padding-left: 0.1em;
+  padding-right: 0.1em;
+  max-width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+   /*見出し　チェック*/
+
+.heading-27 {
+    margin-top: 0.3em;
+    margin-left: 0.3em;
+    font-size: 1.2rem;
+}
 
 
   .tab-wrapper {
@@ -900,15 +968,17 @@ nav .inner ul li a:hover {
 
  /*見出し　ナンバーつき */
   .heading12 {
-    font-size: 1.2rem; /* ← お好みで調整（例: 1rem〜1.4rem） */
+    font-size: 1.1rem; /* ← お好みで調整（例: 1rem〜1.4rem） */
+    margin-top: 1.5em;
   }
+
 
 
 }
 
 @media (max-width: 768px) {
   body {
-    font-size: 14px;
+    font-size: 13px;
     line-height: 1.6;
   }
   .section {
@@ -924,14 +994,18 @@ nav .inner ul li a:hover {
 
 @media screen and (max-width: 768px) {
   .box27 {
-    padding: 1.5em;
-    margin: 2em 0;
+    position: relative;
+    margin: 1em 0 2em; /* ← 上側のマージンを増やす（3em） */
+    padding: 1em 1.5em 1.5em 1.5em; /* ← 文字の余白 */
+    border: solid 3.5px #62c1ce;
+    border-radius: 0 15px 15px 15px; /* ← 丸角 */
+    background-color: #ffffff;
+    padding-left: 1em;
+    margin: 5em 0;
   }
 
-  .indent-2 {
-    padding-left: 1em;
-    margin-left: 0em;
-  }
+
+ 
 
   .container-tx {
   margin: 0;
@@ -940,10 +1014,45 @@ nav .inner ul li a:hover {
 
 .container-tx img {
   display: block;
-  margin: 0.5em auto; /* ← 上下の隙間を狭めたい場合はここを調整 */
-  max-width: 100%;
+  margin: 0.1em auto; /* ← 上下の隙間を狭めたい場合はここを調整 */
+  width: 100%;
+  max-width: none;
   height: auto;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
 }
+
+  .text-col {
+    text-align: left;
+  }
+
+ /*Pインデント*/
+p.indent{
+ margin-left: 1em;
+}
+
+p.indent-2{
+ margin-left: 1em;
+}
+
+ /*箇条書き */
+    ul {
+    padding-left: 1.5em; /* ← デフォルトよりやや狭めに */
+  }
+
+  ul li {
+    margin-left: 0;      /* ← 追加で余白をつけていた場合はリセット */
+  }
+
+
+  .box27 .container-tx img {
+    width: 115%;
+    max-width: none;
+    display: block;
+    margin-left: -5%;
+    margin-right: 0;
+  }
+
 }
 
 /* ハンバーガーメニュー　@keyframes */
