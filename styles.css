@@ -178,13 +178,14 @@ main h1 {
     justify-content: space-around;
     align-items: center;
     margin-top: 1em;
-    max-width: 500px;
+    max-width: 400px;
     padding: 10px 30px;
     color: #313131;
     transition: 0.3s ease-in-out;
     font-weight: 500;
     text-decoration: none;
     padding-right: 2em; /* 右にスペースを確保 */
+    margin: 0.8em auto;
 }
 .button003 a:hover {
     background: #313131;
@@ -209,7 +210,19 @@ main h1 {
 }
 
 
+/*ふわふわした囲み枠*/
+.box3-2 {
+    margin: 0em 2em 2em 2em; /* 外側の余白（上下と中央配置） */
+    padding: 1em 2em 2em 2em;  /* 内側余白 */
+    background-color:#fff;/*背景色*/
+    box-shadow: 0 0 6px 1px hsl(239, 100%, 81%), 0 0 6px 1px #a9a3ff inset;/*ふわりとした影*/
+    border-radius: 30px;
+}
 
+/* pタグの余白 */
+.box3-2 p {
+    margin: 0;
+}
 
 
   /*テキスト含む中央寄せ　余白あり*/
@@ -224,9 +237,8 @@ main h1 {
 }
 
 
-
   /*テキスト含む中央寄せ*/
-.container-tx {
+.container-tx{
   max-width: 960px;
   margin: 0 auto;
   padding: 0 20px;
@@ -247,6 +259,13 @@ main h1 {
 }
 
 
+
+ /*テキストの下の余白　特定*/
+.mb-space {
+  margin-bottom: 2em; /* ← 余白の大きさはお好みで（例：2em, 20pxなど） */
+}
+
+
  /*タブの余白*/
 .container-tab {
   max-width: 960px;
@@ -258,7 +277,7 @@ main h1 {
   max-width: 100%;
   height: auto;
   display: block;
-  margin: 0.5em auto;
+  margin: 0.1em auto;
 }
 
 
@@ -275,13 +294,13 @@ main h1 {
   .image-text-row {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 5px;
     margin: 2em 0;
     
   }
 
   .image-col {
-    flex: 0 0 40%; /* 画像は左40%の幅 */
+    flex: 0 0 50%; /* 画像は左50%の幅 */
   }
 
   .text-col {
@@ -290,9 +309,10 @@ main h1 {
   }
 
   .image-col img {
-    width: 100%;
+    width: 120%;
     height: auto;
     display: block;
+    margin-left: -5%;
   }
 }
 
@@ -493,6 +513,46 @@ main h1 {
   padding: 4px;
   box-sizing: content-box;
 }
+
+
+ /*両サイドアイコン見出し*/
+.icon-h2m {
+  position: relative;
+  display: inline-block;
+  padding: 0 2em;
+  text-align: center;
+}
+
+.icon-h2m:before,
+.icon-h2m:after {
+  font-family: 'Font Awesome 5 Free';
+  line-height: 1;
+  position: absolute;
+  top: calc(50% - .5em);
+  color: #873dff;
+}
+
+.icon-h2m:before {
+  left: 0;
+  content: '\f101';
+}
+
+.icon-h2m:after {
+  right: 0;
+  content: '\f100';
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
