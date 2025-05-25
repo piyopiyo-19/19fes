@@ -1551,15 +1551,23 @@ p.indent-2{
   .slide-button {
     padding: 0.8em 2em;
     font-size: 0.95rem;
+    background-position: left bottom;         /* ← 初期状態を固定（演出なし） */
+    background-size: 100% 100%;               /* ← 背景拡張も無効に */
+    transition: none !important;              /* ← 背景スライド演出なし */
   }
 
   .slide-button .icon {
     width: 20px;
     height: 20px;
+    transform: none !important;               /* ← 回転しない */
+    transition: none !important;
   }
 
   .slide-button .arrow-icon {
     width: 18px;
+    transform: none !important;               /* ← 矢印動かさない */
+    transition: none !important;
   }
 }
+
 
