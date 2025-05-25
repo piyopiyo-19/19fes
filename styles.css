@@ -116,90 +116,7 @@ main h1 {
 }
 
 
-  /*グラデボタン*/
-/* 通常時：グラデ背景＋白文字 */
-.button-gradation {
-  position: relative;
-  display: inline-block;
-  width: 100%;
-  padding: 1.8em 4.0%;
-  font-size: 18px;
-  max-width: 300px;
-  margin: 0 auto;
-  color: #fff;
-  text-decoration: none;
-  user-select: none;
-  background: -webkit-linear-gradient(top left, #46dbae, #0e9ac5);
-  background-size: 300% auto;
-  text-align: center;ありがとうございます！最終的にこのようにしました。
-  このボタンの右側に矢印のアイコンを表示させたいです。
-  矢印はスライド時に少し右に動きます。
-  
-  .slide-button {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    padding: 1.1em 6em;
-    font-size: 1.1rem;
-    font-weight: bold;
-    color: #fff;
-    background: linear-gradient(to left, #516deb 50%, #38e09a 50%);
-    background-size: 200% 100%;
-    background-position: right bottom; /* ← 初期状態を右寄せに */
-    border: none;
-    border-radius: 50px;
-    text-decoration: none;
-    transition: background-position 0.4s ease, color 0.4s ease;
-    overflow: hidden;
-  }
-  
-  .slide-button:hover {
-    background-position: left bottom; /* ← 左へスライド */
-    color: #fff;
-  }
-  
-  .slide-button .icon {
-    width: 20px;
-    height: 20px;
-    transition: transform 0.6s ease;
-  }
-  
-  .slide-button:hover .icon {
-    transform: rotate(360deg);
-  }
-  
-  
-  border-radius: 5px;
-  transition: 0.3s;
-  z-index: 0;
-}
-
-/* ホバー時：白背景＋文字色を青に */
-.button-gradation:hover {
-  background: #fff;
-  color: #322d7c;
-  border: 2px solid #d3e8f0;
-}
-
-/* クリック時（:active）：グラデ背景濃いめに */
-.button-gradation:active {
-  background: -webkit-linear-gradient(top left, #0e9ac5, #46dbae);
-  color: #fff;
-  transform: scale(0.98);
-}
-
-/* 外枠の演出：任意で残す */
-.button-gradation::before {
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  z-index: -1;
-  width: calc(100% + 4px);
-  height: calc(100% + 4px);
-  content: "";
-  background: -webkit-linear-gradient(top left, #46dbae, #0e9ac5);
-  border-radius: 6px;
-}
+ 
 
 /* 検討中ボタン */
 /* 012 */
@@ -353,6 +270,15 @@ main h1 {
   margin-bottom: 2em; /* ← 余白の大きさはお好みで（例：2em, 20pxなど） */
 }
 
+ /*テキストの下の余白　特定*/
+.mb-space-long {
+  margin-bottom: 3em; /* ← 余白の大きさはお好みで（例：2em, 20pxなど） */
+  display: block; 
+}
+
+.button003 a.mb-space-long {
+  margin-bottom: 3em !important;
+}
 
  /*タブの余白*/
 .container-tab {
@@ -503,17 +429,16 @@ main h1 {
  /*見出し　ナンバーつき*/
 
 .heading12 {
-	position: relative;
-	font-size: 26px;
+  position: relative;
+  font-size: 26px;
 }
 
 .heading12::before {
-	content: attr(data-number);
-	display: inline-block;
-	margin-right: 20px;
-	color: #6347ff;
-	font-size: 30px;
-	border-bottom: 1px solid #498ee0;
+  content: attr(data-number);
+  display: inline-block;
+  margin-right: 20px;
+  color: #6347ff;
+  font-size: 30px;
 }
 
 .heading12::after {
@@ -523,7 +448,7 @@ main h1 {
   bottom: 0;
   width: 100%;
   height: 4px;
-  background: linear-gradient(to right, #4b3be0, #5acbff); /* グラデーション風にも可 */
+  background: linear-gradient(to right, #4b3be0, #5acbff);
   border-radius: 2px;
   box-shadow: 0 0 6px rgba(112, 133, 250, 0.2);
 }
@@ -1408,9 +1333,20 @@ nav .inner ul li a:hover {
   }
 
  /*見出し　ナンバーつき */
+
   .heading12 {
-    font-size: 1.1rem; /* ← お好みで調整（例: 1rem〜1.4rem） */
-    margin-top: 2em;
+    font-size: 20px;
+    padding-bottom: 8px;  /* スマホだけ余白を調整 */
+    margin-top: 0.5em;
+  }
+
+  .heading12::before {
+    font-size: 24px;
+    margin-right: 10px;
+  }
+
+  .heading12::after {
+    height: 3px;
   }
 
 /*セクションナビゲーション */
@@ -1429,6 +1365,29 @@ nav .inner ul li a:hover {
     white-space: nowrap;
     flex-shrink: 0;
   }
+
+  /*ハンドアイコン　見出し */
+  .heading-icon {
+    font-size: 1.15em;         /* 少し小さめに */
+    margin: 0.3em 0 0.1em;    /* 上下余白を詰める */
+  }
+
+
+.heading-icon .icon {
+  width: 25px;
+  height: 25px;
+  margin-right: 6px;
+  margin-bottom: 0;
+  border-radius: 2px;
+  padding: 1px;
+}
+
+  .heading-icon + p {
+    margin-top: 0.5em;        /* 見出しとの間を詰める */
+    line-height: 1.6;         /* 行間をやや狭く */
+    letter-spacing: 0.01em;   /* 字間を詰める */
+  }
+
 
 }
 
@@ -1496,6 +1455,18 @@ p.indent-2{
  margin-left: 1em;
 }
 
+
+ /*テキストの下の余白　特定*/
+.mb-space-long {
+  margin-bottom: 5em; /* ← 余白の大きさはお好みで（例：2em, 20pxなど） */
+}
+
+.button003 a.mb-space-long {
+  margin-bottom: 5em !important;
+}
+
+
+
  /*箇条書き */
     ul {
     padding-left: 1.5em; /* ← デフォルトよりやや狭めに */
@@ -1513,6 +1484,9 @@ p.indent-2{
     margin-left: -5%;
     margin-right: 0;
   }
+
+
+  
 
 
 
@@ -1551,23 +1525,23 @@ p.indent-2{
   .slide-button {
     padding: 0.8em 2em;
     font-size: 0.95rem;
-    background-position: left bottom;         /* ← 初期状態を固定（演出なし） */
-    background-size: 100% 100%;               /* ← 背景拡張も無効に */
-    transition: none !important;              /* ← 背景スライド演出なし */
-  }
 
-  .slide-button .icon {
-    width: 20px;
-    height: 20px;
-    transform: none !important;               /* ← 回転しない */
+    /* ✅ グラデーションを打ち消し、単色（青）に固定 */
+    background: #516deb !important;
+    background-image: none !important;
+    background-size: auto !important;
+    background-position: center center !important;
     transition: none !important;
   }
 
+  .slide-button .icon,
   .slide-button .arrow-icon {
-    width: 18px;
-    transform: none !important;               /* ← 矢印動かさない */
+    transform: none !important;
     transition: none !important;
   }
 }
+
+
+
 
 

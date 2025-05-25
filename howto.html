@@ -19,12 +19,16 @@
     .section {
       padding: 15px 20px 40px 20px;
     }
-
-
-    
     .section:nth-of-type(even) {
   background-color: 
 }
+
+  /* ✅ スマホ表示時に余白を小さくする */
+  @media (max-width: 768px) {
+    .section {
+      padding: 10px 15px 20px 15px;
+    }
+  }
   </style>
 </head>
 
@@ -96,7 +100,7 @@
     <section class="section" id="event-overview" data-aos>
       <div class="container center-text2">
         <h2 class="subtitle-text2">   WEBオンリーとは？</h2>
-        <p>WEBオンリーとはインターネット上で開催されるオンライン同人即売会です。<BR>サークル専用ブースが作れたり、参加者同士でメッセージを送り合ったり、まるでリアルイベントのような交流を行うことができます。</p>
+        <p>WEBオンリーとはネット上で開催されるオンライン同人即売会です。<BR>サークル専用ブースが作れる・参加者同士でメッセージを送り合うなど、リアルイベントのような交流ができます。</p>
 
 
         <div class="image-wrapper">
@@ -168,7 +172,7 @@
           <ul>
           <li>登録費用無料</li>
           <li>メールアドレス or Twitter連携での登録が選べます</li>
-          <li>ニックネームなどは後から変更可能です</li>
+          <li class="mb-space-long">ニックネームなどは後から変更可能です</li>
         </ul>
          </div>
          </div>
@@ -188,7 +192,7 @@
           <ul>
           <li>システム利用料￥550（税込）が発生します</li>
           <li>クレジットカード・Paydayが使用可能です</li>
-          <li class="mb-space">サークル名など入力内容は後から変更可能です</li>
+          <li class="mb-space-long">サークル名など入力内容は後から変更可能です</li>
         </ul>
 
          </div>
@@ -211,9 +215,15 @@
         </ul>
         <p class="indent">店舗外観の設定は便利な素材配布先があります！</p>
                 <div class="button003"><a href="link-b">店舗外観データの作り方</a></div>
-        <div class="button003"><a href="link-b">公式ガイド</a></div>
+        <div class="button003">
+  <a href="#" class="mb-space-long">公式ガイド</a>
+</div>
+        
          </div>
          </div>
+
+
+
 
         <h2 class="center-left heading12" data-number="04">頒布品・展示品を登録しよう</h2>
           <div class="image-text-row align-top">
@@ -247,7 +257,9 @@
           <li class="mb-space">はじめての方はpictSQUARE-ONEが便利です！</li>
         </ul>
         <div class="button003"><a href="link-b">頒布品の登録方法</a></div>
-        <div class="button003"><a href="link-b">公式ガイド</a></div>
+        <div class="button003">
+  <a href="#" class="mb-space-long">公式ガイド</a>
+</div>
 
          </div>
          </div>
@@ -274,7 +286,9 @@
         <p class="indent">その他便利な素材配布先や、作り方詳細はこちらを併せて確認ください！ </p>
 
         <div class="button003"><a href="link-b">アバターの作り方</a></div>
-        <div class="button003"><a href="link-b">公式ガイド</a></div>
+        <div class="button003">
+  <a href="#" class="mb-space-long">公式ガイド</a>
+</div>
 
          </div>
          </div>
