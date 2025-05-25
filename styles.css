@@ -299,6 +299,11 @@ main h1 {
     
   }
 
+/* 特定のセクションのみテキストを上揃えにする */
+  .image-text-row.align-top {
+  align-items: flex-start;
+}
+
   .image-col {
     flex: 0 0 50%; /* 画像は左50%の幅 */
   }
@@ -418,10 +423,23 @@ main h1 {
 	content: attr(data-number);
 	display: inline-block;
 	margin-right: 20px;
-	color: #498ee0;
+	color: #6347ff;
 	font-size: 30px;
 	border-bottom: 1px solid #498ee0;
 }
+
+.heading12::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(to right, #4b3be0, #5acbff); /* グラデーション風にも可 */
+  border-radius: 2px;
+  box-shadow: 0 0 6px rgba(112, 133, 250, 0.2);
+}
+
 
  /*見出し　チェック*/
 
@@ -499,10 +517,10 @@ main h1 {
 .heading-icon {
   display: flex;
   align-items: center;
-  font-size: 1.5rem;
+  font-size: 1.5em;
   font-weight: bold;
   margin: 0.5em 0;
-  color: #333;
+  color: #4a3d6e;
 }
 
 .heading-icon .icon {
@@ -563,7 +581,7 @@ main h1 {
  /*ポイントボックス*/
 .box27 {
     position: relative;
-    margin: 1em 0 2em; /* ← 上側のマージンを増やす（3em） */
+    margin: 5em 0 2em; /* ← 上側のマージンを増やす（3em） */
     padding: 1em 2em 2em 2em; /* ← 文字の余白 */
     border: solid 3.5px #62c1ce;
     border-radius: 0 15px 15px 15px; /* ← 丸角 */
@@ -599,6 +617,87 @@ main h1 {
   margin-top: 0.5em;
   margin-bottom: 0.5em;
 }
+
+
+/*アコーディオン*/
+.accordion-001 {
+    max-width: 700px;
+    background-color: hsl(0, 0%, 100%);
+    box-shadow: 0 0 6px rgba(122, 95, 255, 0.377);
+}
+
+.accordion-001[open] {
+  border: 2px solid #8ba6ff8a;; /* 外枠 */
+  border-radius: 9px;       /* 任意で角を丸くする */
+  padding-bottom: 1em; 
+  box-shadow: 0 0 6px rgba(122, 95, 255, 0.377);
+ 
+}
+
+.accordion-001:not([open]) {
+    margin-bottom: 7px;
+}
+
+.accordion-001 summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    padding: 1em 2em;
+    border-radius: 5px;
+    background-color: #8088ff;
+    color: #ffffff;
+    font-weight: 600;
+    cursor: pointer;
+
+
+}
+
+.accordion-001 summary::-webkit-details-marker {
+    display: none;
+}
+
+.accordion-001 summary::before,
+.accordion-001 summary::after {
+    width: 3px;
+    height: .9em;
+    border-radius: 5px;
+    background-color: #ffffff;
+    content: '';
+}
+
+.accordion-001 summary::before {
+    position: absolute;
+    right: 2em;
+    rotate: 90deg;
+}
+
+.accordion-001 summary::after {
+    transition: rotate .3s;
+}
+
+.accordion-001[open] summary::after {
+    rotate: 90deg;
+}
+
+.accordion-001 p {
+    transform: translateY(-10px);
+    opacity: 0;
+    margin: 0;
+    padding: 1em 2em 2em 2em;
+    color: #2e2653;
+    transition: transform .5s, opacity .5s;
+}
+
+
+
+.accordion-001[open] p {
+    transform: none;
+    opacity: 1;
+}
+
+
+ /*アコーディオン*/
 
 
 
@@ -637,7 +736,7 @@ text-align: left;
 
  /*Pインデント*/
 p.indent{
- line-height: 0.7em; /* 行の高さを指定する */
+ line-height: 1.5em; /* 行の高さを指定する */
 }
 
 p.indent-2{
@@ -956,6 +1055,36 @@ nav .inner ul li a:hover {
 /* ---------------ヘッダー＆ハンバーガーメニュー（ここまで） ---------------------*/
 
 
+
+
+/* ページトップボタン */
+
+.pagetop {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  width: 70px;
+  height: 70px;
+  z-index: 999;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  cursor: pointer;
+}
+.pagetop.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+
+
+
+
+
+
+
+
 /* ---------------TOP　メイン画像 ---------------------*/
 /* TOP画像を横幅100%に表示 */
 .top-image {
@@ -1271,7 +1400,7 @@ nav .inner ul li a:hover {
  /*Pインデント*/
 p.indent{
   margin-left: 1em;
-  line-height: 0.5em;
+  line-height: 1.5em; /* ← 行間 */
   letter-spacing: 0.01em;
 }
 
