@@ -131,7 +131,44 @@ main h1 {
   user-select: none;
   background: -webkit-linear-gradient(top left, #46dbae, #0e9ac5);
   background-size: 300% auto;
-  text-align: center;
+  text-align: center;ありがとうございます！最終的にこのようにしました。
+  このボタンの右側に矢印のアイコンを表示させたいです。
+  矢印はスライド時に少し右に動きます。
+  
+  .slide-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 1.1em 6em;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #fff;
+    background: linear-gradient(to left, #516deb 50%, #38e09a 50%);
+    background-size: 200% 100%;
+    background-position: right bottom; /* ← 初期状態を右寄せに */
+    border: none;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: background-position 0.4s ease, color 0.4s ease;
+    overflow: hidden;
+  }
+  
+  .slide-button:hover {
+    background-position: left bottom; /* ← 左へスライド */
+    color: #fff;
+  }
+  
+  .slide-button .icon {
+    width: 20px;
+    height: 20px;
+    transition: transform 0.6s ease;
+  }
+  
+  .slide-button:hover .icon {
+    transform: rotate(360deg);
+  }
+  
+  
   border-radius: 5px;
   transition: 0.3s;
   z-index: 0;
@@ -162,6 +199,57 @@ main h1 {
   content: "";
   background: -webkit-linear-gradient(top left, #46dbae, #0e9ac5);
   border-radius: 6px;
+}
+
+/* 検討中ボタン */
+/* 012 */
+.slide-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 1.1em 6em;
+  margin-top: 0.5em;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #fff;
+  background: linear-gradient(to left, #516deb 50%, #38e09a 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+  border: none;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: background-position 0.4s ease, color 0.4s ease;
+  overflow: hidden;
+  position: relative;
+}
+
+.slide-button:hover {
+  background-position: left bottom;
+  color: #fff;
+}
+
+/* 左のくるくるボール */
+.slide-button .icon {
+  width: 24px;
+  height: 24px;
+  transition: transform 0.6s ease;
+}
+
+.slide-button:hover .icon {
+  transform: rotate(360deg);
+}
+
+/* 右の矢印（スライド用） */
+.slide-button .arrow-icon {
+  width: 22px;
+  height: auto;
+  transition: transform 0.4s ease;
+  will-change: transform;  /* ← ブラウザ最適化ヒント */
+}
+
+/* ✅ ホバーでちゃんと動かす */
+.slide-button:hover .arrow-icon {
+  transform: translateX(6px);
 }
 
 
@@ -1459,4 +1547,19 @@ p.indent-2{
   100% { width: 30%; }
 }
 
+@media (max-width: 768px) {
+  .slide-button {
+    padding: 0.8em 2em;
+    font-size: 0.95rem;
+  }
+
+  .slide-button .icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .slide-button .arrow-icon {
+    width: 18px;
+  }
+}
 
