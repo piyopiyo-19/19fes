@@ -93,8 +93,8 @@ h6 {
 
 @media (max-width: 768px) {
   body {
-    font-size: 13px;
-    line-height: 1.5rem;
+    font-size: 15px;
+    line-height: 1.6;
   }
   .section {
     padding: 60px 15px;
@@ -656,6 +656,8 @@ p.indent{
   }
 
   .text-col {
+    font-size: 15px; 
+    line-height: 1.7;
     flex: 1; /* テキストは残り */
     text-align: left;
   }
@@ -665,6 +667,11 @@ p.indent{
     height: auto;
     display: block;
     margin-left: -5%;
+  }
+
+    p, ul, li {
+    font-size: 15px;
+    line-height: 1.7;
   }
 }
 
@@ -1362,15 +1369,20 @@ p.indent{
   .tab-content {
     width: 100%;
     box-sizing: border-box;
-    padding-left:0 1.2em 0 1.2em;
+  }
+
+    .tab-content {
+    padding:2em 1em 2em 0.7em;
   }
 
  /*見出し　ナンバーつき */
 
   .number-heading1 {
     font-size: 19px;
-    padding-bottom: 8px;  /* スマホだけ余白を調整 */
+    padding-bottom: 2px;  /* スマホだけ余白を調整 */
     margin-top: 0.5em;
+    margin-left: 0.8em;
+    margin-right: 0.8em;
   }
 
   .number-heading1::before {
