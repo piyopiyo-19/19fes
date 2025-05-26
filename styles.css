@@ -62,7 +62,7 @@ body {
   box-sizing: border-box;
 }
 .section {
-  padding: 80px 20px 
+  padding: 50px 20px 
 }
 
 #top.section {
@@ -381,7 +381,17 @@ main h1 {
 }
 
 
+.bg-highlight {
+  background-color: #d1f2ff;  /* 明るい黄色 */
+  padding: 3.5em 0; 
+}
 
+
+@media (max-width: 768px) {
+  .bg-highlight {
+  padding: 1.2em 0; 
+}
+}
 
 /*=====================================================================
 ボタン
@@ -442,7 +452,7 @@ main h1 {
 
 @media (max-width: 768px) {
   .slide-icon-button {
-    padding: 0.8em 2em;
+    padding: 0.4em 2em;
     font-size: 0.95rem;
 
     /* ✅ グラデーションを打ち消し、単色（青）に固定 */
@@ -999,6 +1009,16 @@ p.indent{
     transform: none;
     opacity: 1;
 }
+
+
+
+
+@media (max-width: 768px) {
+ /* ▼ 中央寄せの幅調整（スマホ用） */
+.accordion-001 {
+
+   }
+   }
 
 
  /*アコーディオン*/
