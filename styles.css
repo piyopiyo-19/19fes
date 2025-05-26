@@ -70,6 +70,58 @@ body {
 }
 
 
+
+/* --------見出し制御---------*/
+h1 {
+  font-size: 2rem;
+}
+h2 {
+  font-size: 1.75rem;
+}
+h3 {
+  font-size: 1.5rem;
+}
+h4 {
+  font-size: 1.25rem;
+}
+h5 {
+  font-size: 1rem;
+}
+h6 {
+  font-size: 0.875rem;
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 13px;
+    line-height: 1.5rem;
+  }
+  .section {
+    padding: 60px 15px;
+  }
+
+
+  h1 {
+  font-size: 1.75rem;
+  }
+  h2 {
+  font-size: 1.5rem;
+  }
+  h3 {
+  font-size: 1rem;
+  }
+  h4 {
+  font-size: 0.8rem;
+  }
+  h5 {
+  font-size: 0.75rem;
+  }
+  h6 {
+  font-size: 0.65rem;
+  }
+
+}
+
 /* --------セクションナビゲーション ---------*/
 .section-nav {
   text-align: center;
@@ -474,26 +526,25 @@ main h1 {
 
 
  /*---------------寄せ関係？-------------*/
- /*画像中央寄せ*/
-.image-wrapper {
+
+
+
+ /*------中央寄せ---ページ最上部の中央寄せ、Section内、タブ内の中央寄せ*/
+.center-line {
   text-align: center;
-  margin: 1em 0;
 }
 
-.image-wrapper img {
+.center-line img {
   max-width: 100%;
   height: auto;
   display: inline-block;
   padding: 1em;
 }
 
-
-
-
- /*画像中央寄せ2*/
-.center-img {
-  display: block;
-  margin: 0 auto;
+ /*---------------画像に余白を入れない-------------*/
+.no-padding-img {
+  padding: 0 !important;
+  margin: 0.01em 0; /* 必要なら margin で調整 */
 }
 
 
@@ -509,10 +560,6 @@ p.indent{
  line-height: 1.5em; /* 行の高さを指定する */
 }
 
- /*テキスト中央寄せ*/
-.center-text {
-  text-align: center;
-}
 
 
 
@@ -540,11 +587,18 @@ p.indent{
 
   /*中央寄せ　houto　ガイドライン　Sectionの中央寄せに使用中？　*/
 
-.container {
+.container-center {
   max-width: 960px;
   margin: 0 auto;
   padding: 0 2em;
 }
+
+ /*タブ中央寄せ*/
+.center-tab {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
 
 
 
@@ -565,11 +619,6 @@ p.indent{
   margin-bottom: 3em !important;
 }
 
- /*タブ中央寄せ*/
-.center-tab {
-  max-width: 960px;
-  margin: 0 auto;
-}
 
 .henkoutyuuuu img {
   max-width: 100%;
@@ -684,6 +733,8 @@ p.indent{
   bottom: 3px;
 }
 
+
+
  /*ナンバー+グラデ下線 見出し*/
 
 .number-heading1 {
@@ -712,24 +763,6 @@ p.indent{
 }
 
 
- /*見出し　チェック*/
-
-.heading-27 {
-    display: flex;
-    align-items: center;
-    column-gap: 8px;
-    color: #333333;
-    font-size: 2rem;
-}
-
-.heading-27::before {
-    width: 0.8em;
-    height: 0.4em;
-    border-bottom: 4px solid #2589d0;
-    border-left: 4px solid #2589d0;
-    transform: rotate(-45deg) translate(2px, -2px);
-    content: '';
-}
 
 
 
@@ -784,17 +817,17 @@ p.indent{
 }
 
 
- /*いいね　H3アイコン*/
-.heading-icon {
+ /*1アイコン見出し　（先頭に1個アイコン）*/
+.one-icon-heading {
   display: flex;
   align-items: center;
   font-size: 1.5em;
   font-weight: bold;
-  margin: 0.5em 0;
+  margin: 1em 0 0.1em 0;
   color: #4a3d6e;
 }
 
-.heading-icon .icon {
+.one-icon-heading .icon {
   width: 28px;
   height: 28px;
   margin-right: 10px;
@@ -804,7 +837,26 @@ p.indent{
 }
 
 
- /*両サイドアイコン見出し*/
+
+@media screen and (max-width: 768px) {
+  .one-icon-heading {
+    font-size: 1.15em;
+    gap: 0.3em; /* gapで余白調整もおすすめ */
+  }
+
+  .one-icon-heading .icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 4px;
+    padding: 1px;
+    margin-bottom: 0;         /* ← ここが重要。上下ズレをなくす */
+    vertical-align: middle;   /* 念押し */
+  }
+    }
+
+
+
+ /*両サイドアイコン見出し（要検討！！！）*/
 .icon-h2m {
   position: relative;
   display: inline-block;
@@ -830,6 +882,30 @@ p.indent{
   right: 0;
   content: '\f100';
 }
+
+
+
+ /*サイドにアイコン見出し*/
+.icon-side-head {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* ← 左揃えにする */
+  font-weight: bold;
+  margin: 1.5em 0 0 0;
+  color: #2a2b55;
+  gap: 0.6em;
+}
+
+.icon-side-head img {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+}
+
+.icon-side-head + * {
+  margin-top: 0.7em; /* ← お好みで調整（例：0.5em, 0.2emなど） */
+}
+
 
 
 
@@ -1216,7 +1292,7 @@ p.indent{
 @media (max-width: 768px) {
 
  /* ▼ 中央寄せの幅調整（スマホ用） */
-  .container {
+  .container-center {
     flex-direction: row;
     justify-content: space-between;
     padding-left: 0.6em;
@@ -1259,14 +1335,6 @@ p.indent{
   box-sizing: border-box;
 }
 
-   /*見出し　チェック*/
-
-.heading-27 {
-    margin-top: 0.3em;
-    margin-left: 0.3em;
-    font-size: 1.2rem;
-}
-
 
   .tab-wrapper {
     padding: 0;
@@ -1300,7 +1368,7 @@ p.indent{
  /*見出し　ナンバーつき */
 
   .number-heading1 {
-    font-size: 20px;
+    font-size: 19px;
     padding-bottom: 8px;  /* スマホだけ余白を調整 */
     margin-top: 0.5em;
   }
@@ -1331,44 +1399,10 @@ p.indent{
     flex-shrink: 0;
   }
 
-  /*ハンドアイコン　見出し */
-  .heading-icon {
-    font-size: 1.15em;         /* 少し小さめに */
-    margin: 0.3em 0 0.1em;    /* 上下余白を詰める */
-  }
-
-
-.heading-icon .icon {
-  width: 25px;
-  height: 25px;
-  margin-right: 6px;
-  margin-bottom: 0;
-  border-radius: 2px;
-  padding: 1px;
-}
-
-  .heading-icon + p {
-    margin-top: 0.5em;        /* 見出しとの間を詰める */
-    line-height: 1.6;         /* 行間をやや狭く */
-    letter-spacing: 0.01em;   /* 字間を詰める */
-  }
-
 
 }
 
-@media (max-width: 768px) {
-  body {
-    font-size: 13px;
-    line-height: 1.5rem;
-  }
-  .section {
-    padding: 60px 15px;
-  }
-  h1, h2 {
-    font-size: 1.5em;
-  }
 
-}
 
 @media screen and (max-width: 768px) {
   .box27 {
@@ -1430,7 +1464,7 @@ p.indent{
 
  /*箇条書き */
     ul {
-    padding-left: 1.5em; /* ← デフォルトよりやや狭めに */
+    padding-left: 2.3em; /* ← デフォルトよりやや狭めに */
   }
 
   ul li {
@@ -1445,10 +1479,6 @@ p.indent{
     margin-left: -5%;
     margin-right: 0;
   }
-
-
-  
-
 
 
 }
