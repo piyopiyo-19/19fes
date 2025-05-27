@@ -69,6 +69,23 @@ body {
   padding-top: 10px;
 }
 
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+.site-footer,
+.footer-mobile {
+  margin-top: auto; /* ← 念のためつけておくと安全 */
+}
+
 
 
 /* --------見出し制御---------*/
@@ -79,13 +96,13 @@ h2 {
   font-size: 1.75rem;
 }
 h3 {
-  font-size: 1.5rem;
+  font-size: 1rem;
 }
 h4 {
-  font-size: 1.25rem;
+  font-size: 0.8rem;
 }
 h5 {
-  font-size: 1rem;
+  font-size: 0.75rem;
 }
 h6 {
   font-size: 0.875rem;
@@ -108,7 +125,7 @@ h6 {
   font-size: 1.5rem;
   }
   h3 {
-  font-size: 1rem;
+  font-size: 0.95rem;
   }
   h4 {
   font-size: 0.8rem;
@@ -150,202 +167,6 @@ h6 {
 }
 /*----------------------------------------------------------*/
 
-
-
-/* -----------ヘッダー＆ハンバーガーメニュー ---------------------*/
-
-/*ヘッダー*/
-.site-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 70px;
-  background-color: transparent;  /* ← 完全透明 */
-  z-index: 99;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 20px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.0);
-}
-
-/*ロゴアイコン*/
-.site-logo img {
-  height: 70px;
-}
-
-
-/* ハンバーガーメニュー */
-nav {
-  display: block;
-  position: fixed;
-  top: 0;
-  right: -300px;
-  bottom: 0;
-  width: 300px;
-  background: #ffffff;
-  overflow-x: hidden;
-  overflow-y: auto;
-  transition: 0.5s;
-  z-index: 105;
-}
-.open nav {
-  right: 0;
-}
-
-
-nav .inner {
-  padding: 25px;
-}
-nav .inner ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-nav .inner ul li {
-  position: relative;
-  margin: 0;
-  border-bottom: 1px solid #333;
-}
-nav .inner ul li a {
-  display: block;
-  color: #333;
-  font-size: 14px;
-  padding: 1em;
-  text-decoration: none;
-  transition-duration: 0.2s;
-}
-nav .inner ul li a:hover {
-  background: #e4e4e4;
-}
-
-
-/* -----------ハンバーガーメニュー　ボタン-------- */
-
-.toggle_btn {
-  display: block;
-  position: fixed;
-  top: 30px;
-  right: 30px;
-  width: 60px;
-  height: 40px;
-  transform: scaleX(-1);
-  transition: all .5s;
-  cursor: pointer;
-  z-index: 110;
-}
-
-.open .toggle_btn {
-  right: 320px;
-}
-
-/* 通常時（3本線） */
-.toggle_btn span {
-  display: block;
-  position: absolute;
-  left: 0;
-  width: 60px;
-  height: 2px;
-  z-index: 111; /* 念のため */
-  background-color: #666;
-  transition: all .5s;
-}
-
-.toggle_btn span:nth-child(1) {
-  top: 5px;
-  width: 60px;
-  animation: equalizer01 7000ms infinite reverse;
-}
-.toggle_btn span:nth-child(2) {
-  top: 15px;
-  width: 30px;
-  animation: equalizer02 5000ms infinite reverse;
-  animation-delay: 0.33s;
-}
-.toggle_btn span:nth-child(3) {
-  top: 25px;
-  width: 20px;
-  animation: equalizer02 5000ms infinite reverse;
-}
-
-/* ❌状態（.open） */
-.open .toggle_btn span {
-  background-color: #fff; !important;
-  width: 35px !important;
-}
-
-.open .toggle_btn span:nth-child(1) {
-  transform: translateY(10px) rotate(-45deg) !important;
-  animation: unset !important;
-}
-
-.open .toggle_btn span:nth-child(2) {
-  opacity: 0 !important;
-  animation: unset !important;
-}
-
-.open .toggle_btn span:nth-child(3) {
-  transform: translateY(-10px) rotate(45deg) !important;
-  animation: unset !important;
-}
-
-
-/* ハンバーガーメニュー　マスク処理 */
-#mask {
-  display: none;
-}
-.open #mask {
-  display: block;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: #0e0725;
-  opacity: 0.5;
-  z-index: 100;
-  cursor: pointer;
-  transition: all .5s;
-}
-
-
-
-/* ハンバーガーメニュー(キーフレーム設定) */
-@keyframes equalizer01 {
-  0% { width: 70%; }
-  10% { width: 50%; }
-  20% { width: 100%; }
-  30% { width: 10%; }
-  40% { width: 50%; }
-  50% { width: 70%; }
-  60% { width: 50%; }
-  70% { width: 10%; }
-  80% { width: 100%; }
-  90% { width: 10%; }
-  100% { width: 70%; }
-}
-
-@keyframes equalizer02 {
-  0% { width: 30%; }
-  10% { width: 20%; }
-  20% { width: 40%; }
-  30% { width: 10%; }
-  40% { width: 20%; }
-  50% { width: 30%; }
-  60% { width: 20%; }
-  70% { width: 10%; }
-  80% { width: 40%; }
-  90% { width: 10%; }
-  100% { width: 30%; }
-}
-
-
-
-
-/*============= 
-スマホ表示 
-==============*/
 
 
 
@@ -623,6 +444,22 @@ p.indent{
   display: block; 
 }
 
+/* <li>直下の補足コメント */
+.li-note {
+  margin-top: -0.8em; /* liとの隙間を詰める */
+  margin-left: -0.9em; /* リストのインデントに合わせる */
+  font-size: 0.85em;
+  color: #4a56fc;
+  padding: 0 0.8em 0.5em 0.8em;
+}
+@media (max-width: 768px) {
+  .li-note{
+  padding: 0.1em 0.8em 1.35em 0.8em;
+  font-size: 0.72em;
+  line-height: 1.65;
+  margin-left: -0.6em; /* リストのインデントに合わせる */
+  }
+   }
 
 
 .arrow-button1 a.mb-space-long {
@@ -679,10 +516,21 @@ p.indent{
     margin-left: -5%;
   }
 
-    p, ul, li {
+    p{
     font-size: 15px;
-    line-height: 1.7;
+    line-height: 1.4;
   }
+
+    ul, li {
+    font-size: 15px;
+    line-height: 2.25;
+  }
+
+
+
+
+
+
 }
 
 
@@ -733,7 +581,8 @@ p.indent{
   background-color: #959cff;/*背景色*/
   color: #fff;/*文字色*/
   margin-left: -1em; /* 見出しだけ外側にずらす */
-}
+  font-size: 1.5em;
+  }
 .ribbon-title::before,
 .ribbon-title::after{
   position: absolute;
@@ -749,6 +598,13 @@ p.indent{
 .ribbon-title::after{
   bottom: 3px;
 }
+
+@media (max-width: 768px) {
+  .ribbon-title {
+   padding: .5em .5em .5em calc(15px + .5em);/*テキスト周りの余白*/
+   font-size: 1.3em;
+  }
+   }
 
 
 
@@ -780,8 +636,11 @@ p.indent{
 }
 
 
-
-
+ /*左線　見出し*/
+.heading-leftline {
+    padding: 0.25em 0.4em;
+    border-left: 4px solid #72adcb;
+}
 
 
 
@@ -1009,22 +868,6 @@ p.indent{
     transform: none;
     opacity: 1;
 }
-
-
-
-
-@media (max-width: 768px) {
- /* ▼ 中央寄せの幅調整（スマホ用） */
-.accordion-001 {
-
-   }
-   }
-
-
- /*アコーディオン*/
-
-
-
 
 
 
@@ -1476,7 +1319,6 @@ p.indent{
  /*Pインデント*/
 p.indent{
   margin-left: 1em;
-  line-height: 1.5em; /* ← 行間 */
   letter-spacing: 0.01em;
 }
 
@@ -1494,14 +1336,6 @@ p.indent{
 
 
 
- /*箇条書き */
-    ul {
-    padding-left: 2.3em; /* ← デフォルトよりやや狭めに */
-  }
-
-  ul li {
-    margin-left: 0;      /* ← 追加で余白をつけていた場合はリセット */
-  }
 
 
   .box27 .henkoutyuuuu img {
@@ -1512,6 +1346,18 @@ p.indent{
     margin-right: 0;
   }
 
+     /*箇条書き */
+    ul li {
+    padding-left: 0.2em; 
+    padding-bottom:0.65em;
+  }
+
+
+   .tab-wrapper ul li {
+    line-height: 1.5;
+    padding-left: 0.1em; /* ← デフォルトよりやや狭めに */
+    padding-bottom:0;
+  }
 
 }
 
