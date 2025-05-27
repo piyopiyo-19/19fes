@@ -878,6 +878,7 @@ p.indent{
 .box-019 {
     position: relative;
     margin-top: 5em;
+    margin-bottom: 5em;
     padding: 1.2em 1.5em 1.8em 1.8em;
     border: 3px solid #5ba9e1;
     border-radius: 15px;
