@@ -55,7 +55,7 @@ body {
   letter-spacing: .025em;
   line-height: 1.8;
   color: #2a2b55;
-  font-weight: 530;
+  font-weight: 520; /* 共通のフォント */
 }
 body {
   font-family:
@@ -203,74 +203,6 @@ h6 {
 
 
 
-
-
-.news-box {
-  background: #ffeafb;
-  padding: 1.5em;
-  border-radius: 1em;
-  width: 90%;
-  margin: auto;
-  max-width: 900px;
-  font-size: 1rem;
-}
-
-.news-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.news-header h2 {
-  color: #ff44aa;
-  font-size: 2rem;
-  font-weight: 900;
-  text-shadow: 1px 1px 0 #fff;
-}
-
-.toggle-button {
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-weight: bold;
-  text-align: center;
-  font-size: 0.9rem;
-}
-
-.toggle-button .arrow {
-  font-size: 1.2rem;
-  display: inline-block;
-  transition: transform 0.3s;
-}
-
-.toggle-button.open .arrow {
-  transform: rotate(180deg);
-}
-
-.news-list {
-  list-style: none;
-  padding: 0;
-  margin-top: 1em;
-  max-height: 6em; /* 約2件表示 */
-  overflow: hidden;
-  transition: max-height 0.5s ease;
-}
-
-.news-list.open {
-  max-height: 1000px; /* 十分大きな値 */
-}
-
-.news-list li {
-  margin-bottom: 0.7em;
-  display: flex;
-  gap: 1em;
-  line-height: 1.6;
-}
-
-.news-list .date {
-  font-weight: bold;
-  white-space: nowrap;
-}
 
 
 
@@ -817,11 +749,13 @@ p.indent{
   .ribbon-title {
    padding: .5em .5em .5em calc(15px + .5em);/*テキスト周りの余白*/
    font-size: 1.3em;
+   margin-left: -1.1em; /* 見出しだけ外側にずらす */
+   margin-right: -1.2em; /* 見出しだけ外側にずらす */
   }
 
 
   .ribbon-title .center-tab {
-   margin-left: -2em; /* 見出しだけ外側にずらす */
+   margin-left: -1em; /* 見出しだけ外側にずらす */
   }
    }
 
@@ -866,72 +800,28 @@ p.indent{
 
 
  /*見出し　ちょっとボックス*/
-.box-007 {
-    max-width: 100%;
-    margin: 0 auto;
-    border: 3px solid #af99ff;
-    border-radius: 15px;
-    color: #333333;
-    padding: 0em 1em 1em 1em; /* ← 文字の余白 */
-    margin: 2em 0 2em; /* ← 上側のマージンを増やす（3em） */
-    background: #ffffff;
-}
-
-.box-007 div {
-    display: inline-flex;
-    align-items: center;
-    column-gap: 4px;
-    position: relative;
-    top: -13px;
-    left: 10px;
-    margin: 0 7px;
-    padding: 0 8px;
-    background: #fff;
-    color: #af99ff;
-    font-weight: 600;
-    vertical-align: top;
-}
-
-
-
-.box-007 p {
-    margin: 0;
-    padding: 0 1.5em 1em;
-}
-
-.box-007 .box-label::before {
-  content: '';
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12.8995 6.85453L17.1421 11.0972L7.24264 20.9967H3V16.754L12.8995 6.85453ZM14.3137 5.44032L16.435 3.319C16.8256 2.92848 17.4587 2.92848 17.8492 3.319L20.6777 6.14743C21.0682 6.53795 21.0682 7.17112 20.6777 7.56164L18.5563 9.68296L14.3137 5.44032Z' fill='%23af99ff'%3E%3C/path%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-size: 20px 20px;
-  width: 30px;
-  height: 30px;
-  display: inline-block;
-  vertical-align: middle;
-  margin-right: 8px;
-
-}
 
 
 .box-019 {
     position: relative;
     margin-top: 5em;
-    margin-bottom: 5em;
     padding: 1.2em 1.5em 1.8em 1.8em;
     border: 3px solid #5ba9e1;
     border-radius: 15px;
     font-weight: 700;
+    margin: 5em 2em 5em 2em; 
+    
 }
 
 .box-019 > .box-label {
     position: absolute;
-    top: -1.75em;
+    top: -2.5em;
     left: -.9em;
     padding: .6em 1.4em;
     border-radius: 5px;
     background-color: #5ba9e1;
     color: #fff;
-    font-size: .9em;
+    font-size: 1.3em;
     font-weight: 700;
 }
 
@@ -949,7 +839,13 @@ p.indent{
 
 .box-019 p {
     margin: 0;
+    margin-left: 1em;
+    font-size: 1.2em;
 }
+    .box-019 li{
+    margin-left: 0;
+    font-size: 1.2em;
+  }
 
 .box-019 .arrow-button-wrapper {
   margin-top: 2em;
@@ -959,16 +855,25 @@ p.indent{
 
 @media screen and (max-width: 768px) {
   .box-019 {
-    margin-top: 5em;
+    margin: 5em 0.5em 5em 0.5em; 
     padding: 1em 2em 1.8em 1em;
     border: 3px solid #5ba9e1;
     border-radius: 15px;
   }
+  .box-019 > .box-label {
+    font-size: 1em;
+    top: -2em;
+}
     .box-019 p{
     margin-left: 1.9em;
   }
     .box-019 li{
     margin-left: 0;
+    font-size: 1em;
+  }
+      .box-019 p{
+    margin-left: 1.9em;
+    font-size: 1em;
   }
     }
 
