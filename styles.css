@@ -609,6 +609,7 @@ p.indent{
 .center-tab {
   max-width: 960px;
   margin: 0 auto;
+  padding: 0 0;
 }
 
 
@@ -816,6 +817,11 @@ p.indent{
   .ribbon-title {
    padding: .5em .5em .5em calc(15px + .5em);/*テキスト周りの余白*/
    font-size: 1.3em;
+  }
+
+
+  .ribbon-title .center-tab {
+   margin-left: -2em; /* 見出しだけ外側にずらす */
   }
    }
 
@@ -1514,18 +1520,18 @@ p.indent{
 
    /*タブ内の余白*/
  .center-tab {
-  padding-left: 0.1em;
-  padding-right: 0.1em;
   max-width: 100%;
-  margin: 0 auto;
   box-sizing: border-box;
+  margin-left: 0.1em;
+  margin-right: 0.1em;
 }
 
 
   .tab-wrapper {
     padding: 0;
-    margin: 0 auto;
-    width: 100%;
+    margin-left: -4.5vw;
+    margin-right: -4.5vw;
+    max-width: none;
     box-sizing: border-box;
   }
 
