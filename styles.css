@@ -494,7 +494,7 @@ main h1 {
     font-weight: 500;
     text-decoration: none;
     padding-right: 2em; /* 右にスペースを確保 */
-    margin: 0.8em auto;
+    margin: 0.8em 2em;
 }
 .arrow-button1 a:hover {
     background: #313131;
@@ -621,7 +621,7 @@ p.indent{
 
  /*テキストの下の余白　特定*/
 .mb-space-long {
-  margin-bottom: 3em; /* ← 余白の大きさはお好みで（例：2em, 20pxなど） */
+  margin-bottom: 2.5em; /* ← 余白の大きさはお好みで（例：2em, 20pxなど） */
   display: block; 
 }
 
@@ -642,6 +642,38 @@ p.indent{
   margin-left: -0.6em; /* リストのインデントに合わせる */
   }
    }
+
+/* 直下の補足コメント */
+.note-text {
+  color: #6373ff;           /* 明るめの青 */
+  font-size: 0.9em;         /* 少し小さめの文字 */
+  margin-top: -0.8em;        /* 上に少し余白 */
+  margin-left: 1em;         /* インデント風 */
+  font-weight: 600;         /* 少し軽めの太さで柔らかく */
+  line-height: 1.5;         /* 読みやすい行間 */
+}
+
+.note-text::before {
+  content: "";
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-image: url("images/bikuri.png"); /* ← 画像のパスを指定 */
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-right: 0.4em;
+  vertical-align: middle;
+}
+
+@media (max-width: 768px) {
+  .note-text {
+  margin-left: 2em; /* リストのインデントに合わせる */
+  }
+   }
+
+
+
+
 
 
 .arrow-button1 a.mb-space-long {
@@ -1098,9 +1130,10 @@ p.indent{
     transform: translateY(-10px);
     opacity: 0;
     margin: 0;
-    padding: 1em 2em 2em 2em;
+    padding: 1em 2em 0.5em 2em;
     color: #2e2653;
     transition: transform .5s, opacity .5s;
+    line-height: 1.7;
 }
 
 
@@ -1110,6 +1143,48 @@ p.indent{
     opacity: 1;
 }
 
+@media (max-width: 768px) {
+  .accordion-001,
+  .accordion-001[open] {
+    width: 90%;
+    max-width: none;
+    margin: 1em auto;
+    padding: 0;
+    border-radius: 15px;
+    box-shadow: 5 4px 10px rgba(122, 95, 255, 0.2);
+    background-color: #ffffff;
+    border: 1.5px solid #8ba6ff8a;; /* 外枠 */
+  }
+
+  .accordion-001 summary {
+    padding: 0.9em 2em;
+    font-size: 1rem;
+    text-align: center;
+    background-color: #8088ff;
+    box-shadow: 0 4px 20px rgba(122, 95, 255, 0.2);
+    color: #ffffff;
+    border-radius: 8px;
+  }
+
+
+  .accordion-001 .accordion-content {
+    padding: 0.6em 0em;
+    font-size: 0.9rem;
+    color: #2e2653;
+  }
+
+  .accordion-001 p {
+    margin: 0.2em 0 0 0;
+    line-height: 1.6;
+  }
+
+  .accordion-001 img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 1em auto;
+  }
+}
 
 
 
@@ -1476,13 +1551,13 @@ p.indent{
   }
 
     .tab-content {
-    padding:2em 1em 2em 0.7em;
+    padding:2em 0.9em 2em 0.2em;
   }
 
  /*見出し　ナンバーつき */
 
   .number-heading1 {
-    font-size: 19px;
+    font-size: 18px;
     padding-bottom: 2px;  /* スマホだけ余白を調整 */
     margin-top: 0.5em;
     margin-left: 0.8em;
