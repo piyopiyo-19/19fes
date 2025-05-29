@@ -66,6 +66,10 @@ body {
     sans-serif;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -201,12 +205,171 @@ h6 {
 
 /*----------------------------------------------------------------------------------*/
 
+.balloon-decoration {
+  display: none; /* PCでは非表示 */
+  position: absolute;
+  width: 180px;     /* サイズは調整OK */
+  z-index: 1;       /* 白ボックスより下にしたい場合は 0、上に重ねるなら 10 など */
+  pointer-events: none; /* クリックを無効化して誤タップ防止 */
+}
+
+
+/* 右上配置 */
+.balloon-decoration.top-right {
+  top: -2em;
+  right: 0;
+}
+
+/* 左下配置 */
+.balloon-decoration.bottom-left {
+  bottom: -10em;
+  left: -5em;
+}
+
+/* セクションに相対位置を指定（position: relative が必要） */
+#schedule {
+  position: relative;
+}
+
+/* スマホ表示時のみ表示 */
+@media (max-width: 768px) {
+  .balloon-decoration {
+    display: block;
+  }
+}
 
 
 
 
+/* セクションに背景画像を設定 */
+.with-topbk {
+  background-image: url("images/topbk.png");  /* パスは調整 */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 4em 1em; /* 上下の余白 */
+}
+
+/* 白い角丸ボックス */
+.white-box {
+  background-color: #ffffff;
+  border: 12px solid rgb(81 109 235); 
+  border-radius: 20px;
+  padding: 0.9em;
+  max-width: 960px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
 
 
+
+@media (max-width: 768px) {
+  .white-box {
+    padding: 1em;
+    border-radius: 16px;
+  }
+
+  .with-topbk {
+    padding: 6em 1em;
+  }
+}
+
+
+
+
+/* ボタン全体のラップ */
+/* 背景として画面横幅いっぱい */
+.nav-bar {
+  background-color: rgb(81 109 235);
+  padding: 2em 0 4em 0;
+  width: 100%; 
+  margin: 0 auto;  
+
+  box-sizing: border-box;   /* ← paddingを含めて幅計算 */
+  overflow-y: hidden;       /* ← スクロール防止 */
+  position: relative;
+  z-index: 5;
+}
+
+/* 中身だけ中央＆幅制限 */
+.nav-bar-inner {
+  max-width: 960;
+  margin: 0 auto;                    /* 中央寄せの主役 */
+  display: flex;                    /* gridでもOKだが、横並びを保ちつつ中央に */
+  justify-content: center;         /* ★中央寄せの鍵 */
+  flex-wrap: wrap;                 /* スマホ対応で折り返し可能に */
+  gap: 0 3.5em;
+  text-align: center;
+}
+
+/* ボタンデザイン */
+.nav-item {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.95rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3em;
+  
+}
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 0 1em;
+}
+
+/* 縦線（右線） */
+.nav-item:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 2.1em; /* 線の長さ */
+  border-right: 2px solid #ffffff; /* 線の色と太さ */
+  right: -1.5em;  /* ← ここを調整：0 → -0.5emなどに */
+}
+
+
+
+.nav-item img {
+  width: 24px;
+  height: auto;
+}
+
+/* スマホでは2列に */
+@media (max-width: 768px) {
+
+
+.nav-bar {
+  padding: 2.5em 0 10em 0;
+  width: 100%; 
+  margin: 0 auto;  
+  height: 300px; /* ← ★高さを明示的に設定！ */
+}
+
+
+  .nav-bar-inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1em; /* 必要に応じて調整 */
+  }
+
+  .nav-item {
+    width: 45%;           /* 2列になるよう調整 */
+    margin-bottom: 1em;   /* 下の行との余白 */
+    box-sizing: border-box;
+  }
+
+
+
+}
 
 
 

@@ -2,7 +2,7 @@
 /* ---------------フッター ---------------------*/
 
 .site-footer {
-  background-color: #a1c0e9;
+  background-color: rgb(81 109 235);
   color: #fff;
   font-size: 14px;
   padding: 40px 20px 20px;
@@ -85,7 +85,7 @@
    /*スマホフッター */
 @media (max-width: 768px) {
 .footer-mobile {
-  background-color: #a1c0e9;
+  background-color: rgb(81 109 235);
   color: #fff;
   text-align: center;
   font-size: 13px;
