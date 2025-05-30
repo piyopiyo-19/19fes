@@ -316,6 +316,29 @@ h6 {
 
 
 
+
+
+
+/* セクションに背景画像を設定3 */
+.with-sa-kurusanka {
+  background-image: url("images/sa-kurusannka.png");  /* パスは調整 */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 15em 18em; /* 上下の余白 */
+}
+
+
+@media (max-width: 768px) {
+  .with-sa-kurusanka {
+    padding: 13em 1em 11em 1em;
+  }
+}
+
+
+
+
+
 /* セクションに背景画像を設定 */
 .with-topbk {
   background-image: url("images/topbk.png");  /* パスは調整 */
@@ -325,12 +348,42 @@ h6 {
   padding: 4em 1em; /* 上下の余白 */
 }
 
-/* 白い角丸ボックス */
-.white-box {
+/* 白い角丸ボックス 青枠 */
+.white-box-blue {
   background-color: #ffffff;
   border: 12px solid rgb(81 109 235); 
   border-radius: 20px;
-  padding: 0.9em;
+  padding: 0.5em;
+  max-width: 960px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  position: relative;
+}
+
+
+
+@media (max-width: 768px) {
+  .white-box-blue {
+    padding: 0.5em;
+    border-radius: 16px;
+  }
+
+  .with-topbk {
+    padding: 6em 1em;
+  }
+}
+
+
+
+
+
+
+
+/* 白い角丸ボックス*/
+.white-box {
+  background-color: #ffffff;
+  border-radius: 20px;
+  padding: 0.1em 0 0.9em 0;
   max-width: 960px;
   margin: 0 auto;
   box-sizing: border-box;
@@ -341,14 +394,19 @@ h6 {
 
 @media (max-width: 768px) {
   .white-box {
-    padding: 1em;
+    padding: 0.5em;
     border-radius: 16px;
   }
 
-  .with-topbk {
-    padding: 6em 1em;
-  }
+
 }
+
+
+
+
+
+
+
 
 
 
@@ -605,6 +663,14 @@ main h1 {
 
 
 
+
+
+
+
+
+
+
+
 /*=====================================================================
 ボタン
 ============================================================================*/
@@ -616,8 +682,8 @@ main h1 {
   display: inline-flex;
   align-items: center;
   gap: 20px;
-  padding: 1.4em 4em;
-  margin-top: 0.5em;
+  padding: 1.4rem 3rem;
+  margin-top: 0.5rem;
   font-size: 1.7rem;
   font-weight: 800;
   color: #fff;
@@ -802,6 +868,19 @@ padding: 0.1em 0.05em;
 
 
 
+.section.with-sa-kurusanka {
+  margin-bottom: 4em; /* 必要に応じて調整。例：3em〜6em程度 */
+  margin-top: 5em; /* 必要に応じて調整。例：3em〜6em程度 */
+}
+
+@media (max-width: 768px) {
+  .section.with-sa-kurusanka {
+ margin-bottom: 2em; /* 必要に応じて調整。例：3em〜6em程度 */
+ margin-top: 5em; /* 必要に応じて調整。例：3em〜6em程度 */
+  }
+   }
+
+
 
 
 
@@ -812,6 +891,14 @@ padding: 0.1em 0.05em;
   max-width: 460px;  /* 画像サイズは調整可能 */
   }
    }
+
+
+
+
+
+
+
+
 
 
 
