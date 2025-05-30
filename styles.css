@@ -151,35 +151,6 @@ h6 {
 
 }
 
-
-
-
-
-
-
-  
-
-
-    .outline-text {
-      font-family: 'Dela Gothic One', sans-serif;
-      font-size: 1.5em;
-      font-weight: bold;
-      stroke: #3b7ddd;
-      stroke-width: 0.2em;
-      fill: white;
-      paint-order: stroke;
-      text-anchor: middle; /* ← 水平中央 */
-      dominant-baseline: middle; /* ← 垂直中央 */
-    }
-
-@media (max-width: 768px) {
- .outline-text {
-    font-size: 2.5em;
-  }
-    }
-
-
-
 /* --------セクションナビゲーション ---------*/
 .section-nav {
   text-align: center;
@@ -235,37 +206,112 @@ h6 {
 /*----------------------------------------------------------------------------------*/
 
 .balloon-decoration {
-  display: none; /* PCでは非表示 */
   position: absolute;
-  width: 180px;     /* サイズは調整OK */
-  z-index: 1;       /* 白ボックスより下にしたい場合は 0、上に重ねるなら 10 など */
-  pointer-events: none; /* クリックを無効化して誤タップ防止 */
+  max-width: 300px;
+  height: auto;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* PC右上バルーン */
+.balloon-pc-right {
+  top: 30em;
+  left: 90%;
+  transform: translateX(120%);
+}
+
+/* PC左下バルーン */
+.balloon-pc-left {
+  bottom: 14em;
+  left: -5%;
+  transform: translateX(-220%);
 }
 
 
-/* 右上配置 */
-.balloon-decoration.top-right {
-  top: -2em;
-  right: 0;
-}
 
-/* 左下配置 */
-.balloon-decoration.bottom-left {
-  bottom: -10em;
-  left: -5em;
-}
+@media screen and (max-width: 768px) {
+  .balloon-pc-right,
+  .balloon-pc-left {
+    position: absolute;
+    top: -120px;
+    right: -5em;
+    transform: translateX(-90%);
+    max-width: 210px;
+  }
 
-/* セクションに相対位置を指定（position: relative が必要） */
-#schedule {
-  position: relative;
-}
+  .balloon-pc-left {
+    top: -5em;
+    left: 90%;
+    transform: translateX(50%);
+  }
 
-/* スマホ表示時のみ表示 */
-@media (max-width: 768px) {
-  .balloon-decoration {
-    display: block;
+  .balloon-pc-right {
+    top: 46em;
+    left: 2%;
+    transform: translateX(30%);
   }
 }
+
+
+
+
+
+.balloon-decoration {
+  animation: floatUpDown 3.5s ease-in-out infinite;
+}
+
+@keyframes floatUpDown {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-30px); }
+  100% { transform: translateY(0); }
+}
+
+.balloon-decoration.balloon-pc-right {
+  animation-delay: 0s;
+}
+
+.balloon-decoration.balloon-pc-left {
+  animation-delay: 2.0s;
+}
+
+
+
+
+
+
+
+
+
+/* セクションに背景画像を設定2 */
+.with-webonlyabout {
+  background-image: url("images/webonlitoha.png");  /* パスは調整 */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 18em 1em; /* 上下の余白 */
+}
+
+
+@media (max-width: 768px) {
+  .with-webonlyabout  {
+    padding: 13em 1em 11em 1em;
+  }
+}
+
+.webonlyabout-inner {
+  max-width: 720px;     /* 中央寄せの幅を制限 */
+  margin: 0 auto;       /* センターに配置 */
+  text-align: left;     /* 中のテキストは左寄せ */
+  padding: 0 1em;
+}
+@media (max-width: 768px) {
+  .webonlyabout-inner {
+    max-width: 100%;
+    padding: 0 0.5em;
+  }
+}
+
+
 
 
 
@@ -288,6 +334,7 @@ h6 {
   max-width: 960px;
   margin: 0 auto;
   box-sizing: border-box;
+  position: relative;
 }
 
 
@@ -313,7 +360,6 @@ h6 {
   padding: 2em 0 4em 0;
   width: 100%; 
   margin: 0 auto;  
-
   box-sizing: border-box;   /* ← paddingを含めて幅計算 */
   overflow-y: hidden;       /* ← スクロール防止 */
   position: relative;
@@ -374,12 +420,17 @@ h6 {
 /* スマホでは2列に */
 @media (max-width: 768px) {
 
+  .nav-item img {
+  width: 20px;
+  height: auto;
+}
+
 
 .nav-bar {
-  padding: 2.5em 0 10em 0;
+  padding: 1.0em 0 5em 0;
   width: 100%; 
   margin: 0 auto;  
-  height: 300px; /* ← ★高さを明示的に設定！ */
+  height: 210px; /* ← ★高さを明示的に設定！ */
 }
 
 
@@ -392,8 +443,9 @@ h6 {
 
   .nav-item {
     width: 45%;           /* 2列になるよう調整 */
-    margin-bottom: 1em;   /* 下の行との余白 */
+    margin-bottom: 0.3em;   /* 下の行との余白 */
     box-sizing: border-box;
+    font-size: 0.8rem;
   }
 
 
@@ -508,9 +560,43 @@ main h1 {
 
 
 
+/* 重ねる矢印画像 */
+.arrow-overlay {
+  position: absolute;
+  bottom: -25em;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 450px;
+  height: auto;
+  display: block;
+  z-index: 2;
+  pointer-events: none;
+  animation: floatUpDown 3s ease-in-out infinite;
+}
 
+.section.with-webonlyabout {
+  margin-bottom: 10em; /* 必要に応じて調整。例：3em〜6em程度 */
+}
 
+@media (max-width: 768px) {
+  .arrow-overlay {
+    bottom: -18em;
+    width: 280px;
+  }
 
+  .section.with-webonlyabout {
+    margin-bottom: 4em;
+  }
+}
+
+@keyframes floatUpDown {
+  0%, 100% {
+    transform: translate(-50%, 0);
+  }
+  50% {
+    transform: translate(-50%, -10px); /* 上下に10px動かす */
+  }
+}
 
 
 
@@ -529,11 +615,11 @@ main h1 {
 .slide-icon-button {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  padding: 1.1em 6em;
+  gap: 20px;
+  padding: 1.4em 4em;
   margin-top: 0.5em;
-  font-size: 1.1rem;
-  font-weight: bold;
+  font-size: 1.7rem;
+  font-weight: 800;
   color: #fff;
   background: linear-gradient(to left, #516deb 50%, #38e09a 50%);
   background-size: 200% 100%;
@@ -553,8 +639,8 @@ main h1 {
 
 /* 左のくるくるボール */
 .slide-icon-button .icon {
-  width: 24px;
-  height: 24px;
+  width: 32px;
+  height: 32px;
   transition: transform 0.6s ease;
 }
 
@@ -564,7 +650,7 @@ main h1 {
 
 /* 右の矢印（スライド用） */
 .slide-icon-button .arrow-icon {
-  width: 22px;
+  width: 32px;
   height: auto;
   transition: transform 0.4s ease;
   will-change: transform;  /* ← ブラウザ最適化ヒント */
@@ -580,6 +666,7 @@ main h1 {
   .slide-icon-button {
     padding: 0.4em 2em;
     font-size: 0.95rem;
+    
 
     /* ✅ グラデーションを打ち消し、単色（青）に固定 */
     background: #516deb !important;
@@ -588,6 +675,21 @@ main h1 {
     background-position: center center !important;
     transition: none !important;
   }
+
+
+
+
+  /* 右の矢印（スライド用） */
+.slide-icon-button .arrow-icon {
+  width: 22px;
+}
+
+/* 左のくるくるボール */
+.slide-icon-button .icon {
+  width: 22px;
+  height: 22px;
+
+}
 
   .slide-icon-button .icon,
   .slide-icon-button .arrow-icon {
@@ -659,6 +761,60 @@ main h1 {
 }
 
 
+/* 蛍光ペン */
+.highlight-blue {
+padding: 0.1em 0.05em;
+  background-image: linear-gradient(180deg, transparent 0.95em, #2594fb80 0.95em, #2594fb80 1.65em, transparent 1.65em);
+}
+
+
+
+.webonly-heading-image {
+  position: relative;
+  width: 100%;
+  height: 0; /* 高さ不要 */
+}
+
+.webonly-heading-image img {
+  position: absolute;
+  top: 50px; /* セクションにかぶる高さ。必要に応じて調整 */
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 720px;  /* 画像サイズは調整可能 */
+  z-index: 2;
+}
+
+
+
+
+.section.with-topbk {
+  margin-bottom: 4em; /* 必要に応じて調整。例：3em〜6em程度 */
+}
+
+@media (max-width: 768px) {
+  .section.with-topbk {
+ margin-bottom: 2em; /* 必要に応じて調整。例：3em〜6em程度 */
+  }
+   }
+
+
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+  .webonly-heading-image img{
+  top: 60px; /* セクションにかぶる高さ。必要に応じて調整 */
+  left: 50%;
+  max-width: 460px;  /* 画像サイズは調整可能 */
+  }
+   }
+
+
+
 
 
  /*---------------寄せ関係？-------------*/
@@ -668,6 +824,7 @@ main h1 {
  /*------中央寄せ---ページ最上部の中央寄せ、Section内、タブ内の中央寄せ*/
 .center-line {
   text-align: center;
+  position: relative;
 }
 
 .center-line img {
@@ -1326,7 +1483,7 @@ p.indent{
 [data-aos] {
   opacity: 0;
   transform: translateY(20px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  transition: opacity 2.0s ease-out, transform 2.0s ease-out;
 }
 
 [data-aos].aos-animate {

@@ -6,9 +6,6 @@
   <title>MNTKFES！</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="footer.css">
-  <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap" rel="stylesheet">
-
   
   <style>
     [data-aos] {
@@ -21,9 +18,6 @@
       transform: translateY(0);
     }
   </style>
-
-  
-
 </head>
 
 <body>
@@ -123,20 +117,17 @@
 
 <section class="section with-topbk" id="schedule" data-aos>
  <!-- スマホ用の装飾風船画像（右上・左下） -->
-  <img src="images/topbk-balloon.png" alt="" class="balloon-decoration top-right">
-  <img src="images/topbk-balloon.png" alt="" class="balloon-decoration bottom-left">
+
 
   <div class="white-box">
+    <!-- PC表示用バルーン -->
+    <img src="images/topbk-balloon.png" alt="" class="balloon-decoration balloon-pc-right">
+    <img src="images/topbk-balloon.png" alt="" class="balloon-decoration balloon-pc-left">
+
     <div class="container-center">
       <div class="henkoutyuuuu">
- 
-
-<svg viewBox="0 0 500 100" xmlns="http://www.w3.org/2000/svg" width="100%" height="auto">
-  <text x="50%" y="50%" class="outline-text">イベント案内</text>
-</svg>
-
-
-
+          
+<h2>イベント概要</h2>
 </div>
 <div class="info-line">
   <div class="label">開催日時</div>
@@ -171,20 +162,76 @@
       </div>
     </section>
 
+
+
+
+
+
+<div class="webonly-heading-image">
+  <img src="images/webonlitoha-2.png" alt="WEBオンリーとは">
+</div>
+
+<section class="section with-webonlyabout" id="schedule" data-aos>
+
+  <div class="white-box">
+
+ 
+    <div class="container-center">
+      <div class="webonlyabout-inner">
+
+
+
+        <div class="center-line">
+          <img src="images/web-only.png" alt="オンリー概要" class="no-padding-img">
+        </div>
+
+<h3 class="one-icon-heading">
+  <img src="images/good-icon.png" alt="Good" class="icon">
+  <span class="highlight-blue">無料で気軽に参加できる！</span>
+</h3>
+        <p>一般参加費無料、スマホ・パソコンから参加できます。</p>
+
+        <h3 class="one-icon-heading">
+  <img src="images/good-icon.png" alt="Good" class="icon">
+  <span class="highlight-blue">サークル作品の通販･展示方法は自由！</span>
+</h3>
+
+        <p>既刊・旧作品だけでもOK！pixivやTwitterに上げた作品の展示だけの参加ももちろんOKです。</p>
+        <div class="center-line" data-aos>
+          <img src="images/tugi.png" alt="矢印" class="arrow-overlay">
+      </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class="henkoutyuuuu-scr">
-
-
-
-
-
-
-
-
-
-
   <section class="section" id="about" data-aos>
   <div class="henkoutyuuuu">
-    <h2>参加について</h2>
+
 
 <a href="howto.html" class="slide-icon-button">
   <img src="images/ball.png" alt="" class="icon">
@@ -352,14 +399,17 @@
 
   <script>
     // スクロール演出
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('aos-animate');
-        }
-      });
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('aos-animate');
+      }
     });
-    document.querySelectorAll('[data-aos]').forEach(el => observer.observe(el));
+  }, {
+    rootMargin: '0px 0px -250px 0px'  // ← 下から200px入ってから発火
+  });
+
+  document.querySelectorAll('[data-aos]').forEach(el => observer.observe(el));
 
     // タブ切替
     function showTab(tab) {
