@@ -152,36 +152,17 @@ h6 {
 }
 
 
-.h2-dela {
-
-  font-family: 'Dela Gothic One', sans-serif;
-  font-size: 2.5rem; /* サイズは調整可 */
-  color: white; /* 中の文字色 */
-text-shadow:
-  -3px -3px 0 #3b7ddd,
-   3px -3px 0 #3b7ddd,
-  -3px  3px 0 #3b7ddd,
-   3px  3px 0 #3b7ddd,
-   0   -3px 0 #3b7ddd,
-   0    3px 0 #3b7ddd,
-  -3px  0   0 #3b7ddd,
-   3px  0   0 #3b7ddd;
-     letter-spacing: 0.05em;  /* ← 少し字間を空ける */
-  line-height: 1.3;        /* ← 必要なら行間も調整 */
-}
 
 
-@media (max-width: 768px) {
- .h2-dela {
-    font-size: 2rem;
-  }
+
+
 
   
 
-  }
+
     .outline-text {
       font-family: 'Dela Gothic One', sans-serif;
-      font-size: 25px;
+      font-size: 1.5em;
       font-weight: bold;
       stroke: #3b7ddd;
       stroke-width: 0.2em;
@@ -191,7 +172,11 @@ text-shadow:
       dominant-baseline: middle; /* ← 垂直中央 */
     }
 
-
+@media (max-width: 768px) {
+ .outline-text {
+    font-size: 2.5em;
+  }
+    }
 
 
 
