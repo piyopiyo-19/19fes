@@ -389,13 +389,47 @@ h6 {
 
 
 
+#attention {
+  color: #9287f7;        /* 好きな色に変更（例：赤系） */
+  font-size: 1.05rem;    /* 全体の文字サイズを少し大きく */
+  line-height: 1.8;
+  font-weight: 600;      /* 少し太めにする */
+  margin-bottom: 2em; 
+}
+
+#attention h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+
+@media (max-width: 768px) {
+  #attention {
+    font-size: 0.75rem;
+    margin: 2em 0 3em 0; 
+    line-height: 18px;
+  }
+  #attention h2 {
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+}
+
+
+
+
+
+
+
+
+
 
 
 /* 白い角丸ボックス*/
 .white-box {
   background-color: #ffffff;
   border-radius: 20px;
-  padding: 0.1em 0 0.9em 0;
+  padding: 0.1em 2% 1em 2%;
   max-width: 960px;
   margin: 0 auto;
   box-sizing: border-box;
@@ -427,11 +461,12 @@ h6 {
 /* 背景として画面横幅いっぱい */
 .nav-bar {
   background-color: rgb(81 109 235);
-  padding: 2em 0 4em 0;
+  padding: 1em 0 1em 0;
   width: 100%; 
   margin: 0 auto;  
   box-sizing: border-box;   /* ← paddingを含めて幅計算 */
   overflow-y: hidden;       /* ← スクロール防止 */
+  overflow-x: hidden; /* 横スクロールを抑止 */
   position: relative;
   z-index: 5;
 }
@@ -443,30 +478,23 @@ h6 {
   display: flex;                    /* gridでもOKだが、横並びを保ちつつ中央に */
   justify-content: center;         /* ★中央寄せの鍵 */
   flex-wrap: wrap;                 /* スマホ対応で折り返し可能に */
-  gap: 0 3.5em;
+  gap: 0 1.5em;
   text-align: center;
 }
 
 /* ボタンデザイン */
 .nav-item {
+  display: inline-flex;       /* 横並びに変更 */
+  align-items: center;        /* 垂直方向に中央揃え */
+  gap: 0.5em;                 /* アイコンと文字の間 */
+  font-size: 0.95rem;
+  font-weight: 600;
   color: #fff;
   text-decoration: none;
-  font-weight: bold;
-  font-size: 0.95rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.3em;
-  
+  padding: 0.5em 1em;
+  white-space: nowrap;
 }
-.nav-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  padding: 0 1em;
-}
+
 
 /* 縦線（右線） */
 .nav-item:not(:last-child)::after {
@@ -490,37 +518,33 @@ h6 {
 /* スマホでは2列に */
 @media (max-width: 768px) {
 
-  .nav-item img {
-  width: 20px;
-  height: auto;
+  .nav-bar {
+  padding: 0.7em 0 0.7em 0;
 }
-
-
-.nav-bar {
-  padding: 1.0em 0 5em 0;
-  width: 100%; 
-  margin: 0 auto;  
-  height: 210px; /* ← ★高さを明示的に設定！ */
-}
-
-
   .nav-bar-inner {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    gap: 1em; /* 必要に応じて調整 */
+    justify-content: center;   /* 2列全体を中央寄せ */
+    gap: 0.2em;
+    text-align: center;
   }
 
   .nav-item {
-    width: 45%;           /* 2列になるよう調整 */
-    margin-bottom: 0.3em;   /* 下の行との余白 */
-    box-sizing: border-box;
-    font-size: 0.8rem;
+    width: 45%;                /* ← 2列 */
+    margin: 0 auto;            /* ← 各項目を中央寄せ */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;   /* アイコン＋テキストの横並びを中央に */
+    text-align: center;
   }
 
-
-
+  .nav-item img {
+    margin-right: 0.4em;
+    width: 20px;
+    height: auto;
+  }
 }
+
 
 
 
@@ -542,14 +566,14 @@ main h1 {
 
 
 .bg-highlight {
-  background-color: #d1f2ff;  /* 明るい黄色 */
-  padding: 3.5em 0; 
+  background-color: #e7f7ff;  /* 明るい黄色 */
+  padding: 0.1em 0 0.1em 0; 
 }
 
 
 @media (max-width: 768px) {
   .bg-highlight {
-  padding: 1.2em 0; 
+  padding: 0.5em 0 0.2em 0; 
 }
 }
 
@@ -636,7 +660,7 @@ main h1 {
   bottom: -18em;
   left: 50%;
   transform: translateX(-50%);
-  width: 450px;
+  width: 300px;
   height: auto;
   display: block;
   z-index: 2;
@@ -866,7 +890,7 @@ padding: 0.1em 0.05em;
 
 
 .section.with-topbk {
-  margin-bottom: 4em; /* 必要に応じて調整。例：3em〜6em程度 */
+  margin-bottom: 2.5em; /* 必要に応じて調整。例：3em〜6em程度 */
 }
 
 @media (max-width: 768px) {
@@ -875,6 +899,8 @@ padding: 0.1em 0.05em;
   }
    }
 
+
+   
 
 
 
@@ -934,6 +960,22 @@ padding: 0.1em 0.05em;
 .no-padding-img {
   padding: 0 !important;
   margin: 0.01em 0; /* 必要なら margin で調整 */
+}
+
+ /*---------------画像の大きさ調整-------------*/
+.mntkfes-tg-img {
+  width: 50%;         /* 画面幅の80%に調整 */
+  max-width: 600px;   /* 最大幅は600pxまで */
+  height: auto;       /* アスペクト比を保ったまま */
+  display: block;
+  margin: 0 auto;     /* 中央揃え */
+}
+
+@media (max-width: 768px) {
+  .mntkfes-tg-img {
+    width: 90%;
+    max-width: 100%;
+  }
 }
 
 
