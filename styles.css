@@ -99,6 +99,18 @@ main {
 }
 
 
+@media (min-width: 769px) {
+  body {
+    font-size: 20px;     /* 通常より少し大きめ */
+    font-weight: 600;    /* 少し太め（デフォルトより強調） */
+  }
+
+  p, li {
+    font-size: 1.2rem;  /* 通常段落やリストも少し大きく */
+    font-weight: 600;
+  }
+}
+
 
 /* --------見出し制御---------*/
 h1 {
@@ -288,7 +300,7 @@ h6 {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  padding: 18em 1em; /* 上下の余白 */
+  padding: 18em 1em 18em 1em; /* 上下の余白 */
 }
 
 
@@ -325,13 +337,13 @@ h6 {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  padding: 15em 18em; /* 上下の余白 */
+  padding: 20em 12em 25em 12em; /* 上下の余白 */
 }
 
 
 @media (max-width: 768px) {
   .with-sa-kurusanka {
-    padding: 13em 1em 11em 1em;
+    padding: 17em 1em 19em 1em;
   }
 }
 
@@ -353,7 +365,7 @@ h6 {
   background-color: #ffffff;
   border: 12px solid rgb(81 109 235); 
   border-radius: 20px;
-  padding: 0.5em;
+  padding: 2em 0 2em 0;
   max-width: 960px;
   margin: 0 auto;
   box-sizing: border-box;
@@ -621,7 +633,7 @@ main h1 {
 /* 重ねる矢印画像 */
 .arrow-overlay {
   position: absolute;
-  bottom: -25em;
+  bottom: -18em;
   left: 50%;
   transform: translateX(-50%);
   width: 450px;
@@ -633,17 +645,17 @@ main h1 {
 }
 
 .section.with-webonlyabout {
-  margin-bottom: 10em; /* 必要に応じて調整。例：3em〜6em程度 */
+  margin-bottom: 2em; /* 必要に応じて調整。例：3em〜6em程度 */
 }
 
 @media (max-width: 768px) {
   .arrow-overlay {
-    bottom: -18em;
+    bottom: -16em;
     width: 280px;
   }
 
   .section.with-webonlyabout {
-    margin-bottom: 4em;
+    margin-bottom: 8em;
   }
 }
 
@@ -843,10 +855,10 @@ padding: 0.1em 0.05em;
 
 .webonly-heading-image img {
   position: absolute;
-  top: 50px; /* セクションにかぶる高さ。必要に応じて調整 */
+  top: 120px; /* セクションにかぶる高さ。必要に応じて調整 */
   left: 50%;
   transform: translateX(-50%);
-  max-width: 720px;  /* 画像サイズは調整可能 */
+  max-width: 750px;  /* 画像サイズは調整可能 */
   z-index: 2;
 }
 
@@ -868,17 +880,9 @@ padding: 0.1em 0.05em;
 
 
 
-.section.with-sa-kurusanka {
-  margin-bottom: 4em; /* 必要に応じて調整。例：3em〜6em程度 */
-  margin-top: 5em; /* 必要に応じて調整。例：3em〜6em程度 */
-}
 
-@media (max-width: 768px) {
-  .section.with-sa-kurusanka {
- margin-bottom: 2em; /* 必要に応じて調整。例：3em〜6em程度 */
- margin-top: 5em; /* 必要に応じて調整。例：3em〜6em程度 */
-  }
-   }
+
+
 
 
 
@@ -904,7 +908,12 @@ padding: 0.1em 0.05em;
 
 
 
+
  /*---------------寄せ関係？-------------*/
+
+.sanka {
+  margin: 1em 0 8em 0;  /* 上下に4emの余白を追加 */
+}
 
 
 
@@ -1403,6 +1412,65 @@ p.indent{
   margin-top: 0.7em; /* ← お好みで調整（例：0.5em, 0.2emなど） */
 }
 
+
+ /*サイドにライン　見出し*/
+
+.heading-6 {
+    display: inline-block;
+    position: relative;
+    padding: 0 2.5em;
+    color: #2f3080;
+    font-size: 2rem;
+}
+
+.heading-6::before,
+.heading-6::after {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    width: 1.5rem;
+    height: 4px;
+    background-color: #0c82f0;
+}
+
+.heading-6::before {
+    left: 2.5rem;
+}
+
+.heading-6::after {
+    right: 2.5rem;
+}
+
+    /* 見出しとその直下の段落の余白を狭くする */
+.heading-6 + p {
+  margin-top: -1.3rem; /* 通常より小さな上余白 */
+}
+
+
+@media screen and (max-width: 768px) {
+  .heading-6 {
+    font-size: 1.5rem;
+  }
+  .heading-6::before,
+.heading-6::after {
+    top: 45%;
+    width: 1.2rem;
+    height: 3px;
+}
+
+.heading-6::before {
+    left: 1.8rem;
+}
+
+.heading-6::after {
+    right: 1.8rem;
+}
+
+.heading-6 + p {
+  margin-top: -1rem; /* 通常より小さな上余白 */
+}
+    }
 
 
 
