@@ -337,13 +337,13 @@ h6 {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  padding: 20em 12em 25em 12em; /* 上下の余白 */
+  padding: 14em 12em 18em 12em; /* 上下の余白 */
 }
 
 
 @media (max-width: 768px) {
   .with-sa-kurusanka {
-    padding: 17em 1em 19em 1em;
+    padding: 12rem 1em 19em 1em;
   }
 }
 
@@ -357,7 +357,7 @@ h6 {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  padding: 4em 1em; /* 上下の余白 */
+  padding: 15rem 1rem 10rem 1rem; /* 上下の余白 */
 }
 
 /* 白い角丸ボックス 青枠 */
@@ -381,7 +381,7 @@ h6 {
   }
 
   .with-topbk {
-    padding: 6em 1em;
+    padding: 10em 1em;
   }
 }
 
@@ -405,12 +405,12 @@ h6 {
 
 @media (max-width: 768px) {
   #attention {
-    font-size: 0.75rem;
+    font-size: 0.6rem;
     margin: 2em 0 3em 0; 
     line-height: 18px;
   }
   #attention h2 {
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   font-weight: bold;
 }
 }
@@ -427,9 +427,8 @@ h6 {
 
 /* 白い角丸ボックス*/
 .white-box {
-  background-color: #ffffff;
   border-radius: 20px;
-  padding: 0.1em 2% 1em 2%;
+  padding: 0.01rem 2% 1rem 2%;
   max-width: 960px;
   margin: 0 auto;
   box-sizing: border-box;
@@ -440,7 +439,7 @@ h6 {
 
 @media (max-width: 768px) {
   .white-box {
-    padding: 0.5em;
+    padding: 0.1em 0 1em 0;
     border-radius: 16px;
   }
 
@@ -674,12 +673,12 @@ main h1 {
 
 @media (max-width: 768px) {
   .arrow-overlay {
-    bottom: -16em;
-    width: 280px;
+    bottom: -12em;
+    width: 200px;
   }
 
   .section.with-webonlyabout {
-    margin-bottom: 8em;
+    margin-bottom: 1em;
   }
 }
 
@@ -718,16 +717,16 @@ main h1 {
   display: inline-flex;
   align-items: center;
   gap: 20px;
-  padding: 1.4rem 3rem;
+  padding: 2rem 4rem;
   margin-top: 0.5rem;
-  font-size: 1.7rem;
+  font-size: 1.9rem;
   font-weight: 800;
   color: #fff;
   background: linear-gradient(to left, #516deb 50%, #38e09a 50%);
   background-size: 200% 100%;
   background-position: right bottom;
   border: none;
-  border-radius: 50px;
+  border-radius: 60px;
   text-decoration: none;
   transition: background-position 0.4s ease, color 0.4s ease;
   overflow: hidden;
@@ -882,9 +881,59 @@ padding: 0.1em 0.05em;
   top: 120px; /* セクションにかぶる高さ。必要に応じて調整 */
   left: 50%;
   transform: translateX(-50%);
-  max-width: 750px;  /* 画像サイズは調整可能 */
+  max-width: 850px;  /* 画像サイズは調整可能 */
   z-index: 2;
 }
+
+
+.webonly-heading-image1 {
+  position: relative;
+  width: 100%;
+  height: 0; /* 高さ不要 */
+}
+
+.webonly-heading-image1 img {
+  position: absolute;
+  top: 100px; /* セクションにかぶる高さ。必要に応じて調整 */
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 500px;  /* 画像サイズは調整可能 */
+  z-index: 2;
+}
+
+@media (max-width: 768px) {
+.webonly-heading-image1 img {
+  top: 50px; /* セクションにかぶる高さ。必要に応じて調整 */
+  max-width: 380px;  /* 画像サイズは調整可能 */
+   }
+    }
+
+
+
+
+.webonly-heading-image3 {
+  position: relative;
+  width: 100%;
+  height: 0; /* 高さ不要 */
+}
+
+.webonly-heading-image3 img {
+  position: absolute;
+  top: 4rem; /* セクションにかぶる高さ。必要に応じて調整 */
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 550px;  /* 画像サイズは調整可能 */
+  z-index: 2;
+}
+
+@media (max-width: 768px) {
+.webonly-heading-image3 img {
+  top: 3rem; /* セクションにかぶる高さ。必要に応じて調整 */
+  max-width: 400px;  /* 画像サイズは調整可能 */
+   }
+    }
+
+
 
 
 
@@ -916,9 +965,9 @@ padding: 0.1em 0.05em;
 
 @media (max-width: 768px) {
   .webonly-heading-image img{
-  top: 60px; /* セクションにかぶる高さ。必要に応じて調整 */
+  top: 40px; /* セクションにかぶる高さ。必要に応じて調整 */
   left: 50%;
-  max-width: 460px;  /* 画像サイズは調整可能 */
+  max-width: 500px;  /* 画像サイズは調整可能 */
   }
    }
 
@@ -938,8 +987,14 @@ padding: 0.1em 0.05em;
  /*---------------寄せ関係？-------------*/
 
 .sanka {
-  margin: 1em 0 8em 0;  /* 上下に4emの余白を追加 */
+  margin: 1em 0 11em 0;  /* 上下に4emの余白を追加 */
 }
+
+@media (max-width: 768px) {
+.sanka {
+  margin: 0em 0 3em 0;  /* 上下に4emの余白を追加 */
+}
+   }
 
 
 
