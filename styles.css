@@ -411,14 +411,14 @@ h6 {
 
 @media (max-width: 768px) {
   #attention {
-    font-size: 0.5rem;
-    margin: 2em 0 3em 0; 
+    font-size: 0.35rem;
+    margin: 2em 0 4em 0; 
     line-height: 10px;
   }
   #attention h2 {
   font-size: 1.2rem;
   font-weight: bold;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 }
 
