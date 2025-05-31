@@ -145,11 +145,11 @@
 
 
 
+
+<section class="section with-topbk" id="schedule" data-aos>
 <div class="webonly-heading-image1">
   <img src="images/sa-ibent-tx.png" alt="イベント概要">
 </div>
-
-<section class="section with-topbk" id="schedule" data-aos>
 
 
   <div class="white-box-blue">
@@ -198,11 +198,12 @@
 
 
 
-<div class="webonly-heading-image">
-  <img src="images/webonlitoha-2.png" alt="WEBオンリーとは">
-</div>
+
 
 <section class="section with-webonlyabout" id="schedule" data-aos>
+  <div class="webonly-heading-image">
+  <img src="images/webonlitoha-2.png" alt="WEBオンリーとは">
+</div>
 
   <div class="white-box-blue">
 
@@ -240,7 +241,7 @@
 
 
 
-<div class="henkoutyuuuu-scr">
+
   <section class="sanka" id="about" data-aos>
   <div class="henkoutyuuuu">
 
@@ -249,7 +250,7 @@
   <span>参加方法の詳細はこちら</span>
   <img src="images/arrow.png" alt="" class="arrow-icon">
 </a>
-  </div>
+
   </div>
   </section>
 
@@ -264,11 +265,12 @@
 
 
 
-<div class="webonly-heading-image3">
-  <img src="images/sa-kurusannka-tx.png" alt="サークル参加">
-</div>
+
 
 <section class="section with-sa-kurusanka" id="schedule" data-aos>
+  <div class="webonly-heading-image3">
+  <img src="images/sa-kurusannka-tx.png" alt="サークル参加">
+</div>
 
   <div class="white-box">
 
@@ -496,6 +498,28 @@
   }, 0.2); // 秒後に表示
 });
 
+    // ズーム+フェード
+  document.addEventListener("DOMContentLoaded", function () {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-in');
+        }
+      });
+    }, {
+      threshold: 0.1 // スマホ向けに緩く
+    });
+
+    const targets = document.querySelectorAll('.slide-icon-button');
+    targets.forEach(el => {
+      observer.observe(el);
+
+      // 画面に既に表示されている場合も発火させる
+      if (el.getBoundingClientRect().top < window.innerHeight) {
+        el.classList.add('animate-in');
+      }
+    });
+  });
 
   </script>
 </body>
