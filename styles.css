@@ -54,7 +54,7 @@ html, body {
 body {
   letter-spacing: .025em;
   line-height: 1.8;
-  color: #2a2b55;
+  color: #464775;
   font-weight: 520; /* 共通のフォント */
 }
 body {
@@ -777,7 +777,6 @@ main h1 {
     will-change: transform, opacity;
     padding: 0.8em 4em;
     font-size: 1.1rem;
-    font-weight: 850;
     gap: 10px;
     
 
