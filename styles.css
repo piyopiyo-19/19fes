@@ -411,8 +411,8 @@ h6 {
 
 @media (max-width: 768px) {
   #attention {
-    font-size: 0.35rem;
-    margin: 2em 0 4em 0; 
+    font-size: 0.43rem;
+    margin: 2em 0 6em 0; 
     line-height: 10px;
   }
   #attention h2 {
@@ -2179,6 +2179,13 @@ p.indent{
     padding-left: 0.1em; /* ← デフォルトよりやや狭めに */
     padding-bottom:0;
   }
+
+
+html, body {
+  overflow-x: hidden;       /* 横スクロール無効化 */
+  width: 100%;
+}
+
 
 }
 
