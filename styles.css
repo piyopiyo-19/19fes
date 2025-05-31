@@ -405,7 +405,7 @@ h6 {
 
 @media (max-width: 768px) {
   #attention {
-    font-size: 0.6rem;
+    font-size: 0.5rem;
     margin: 2em 0 3em 0; 
     line-height: 18px;
   }
