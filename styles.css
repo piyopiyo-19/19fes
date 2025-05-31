@@ -724,7 +724,7 @@ main h1 {
 .slide-icon-button {
   display: inline-flex;
   align-items: center;
-  gap: 20px;
+  gap: 18px;
   padding: 2rem 4rem;
   margin-top: 0.5rem;
   font-size: 1.9rem;
@@ -752,6 +752,7 @@ main h1 {
   width: 32px;
   height: 32px;
   transition: transform 0.6s ease;
+  right: 0.1em;  /* 右端からの距離を調整 */
 }
 
 .slide-icon-button:hover .icon {
@@ -775,8 +776,9 @@ main h1 {
 @media (max-width: 768px) {
   .slide-icon-button {
     will-change: transform, opacity;
-    padding: 0.4em 2em;
-    font-size: 0.95rem;
+    padding: 0.8em 4em;
+    font-size: 1.1rem;
+    gap: 10px;
     
 
     /* ✅ グラデーションを打ち消し、単色（青）に固定 */
