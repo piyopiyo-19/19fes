@@ -20,9 +20,8 @@
   </style>
 </head>
 
-<body>
+<body id="top">
   <div class="bg_pattern Paper_v2"></div>
-
 
 
 
@@ -48,7 +47,7 @@
   <nav>
     <div class="inner">
       <ul>
-        <li><a href="#top">ホーム</a></li>
+        <li><a href="index.html">ホーム</a></li>
         <li><a href="howto.html">参加について</a></li>
         <li><a href="guideline.html">サークル参加者向けガイドライン</a></li>
         <li><a href="#gallery">ギャラリー</a></li>
@@ -67,20 +66,25 @@
  
 
   <!-- ✅ コンテンツ -->
-<section class="section" id="top" data-aos>
+<section class="section" id="top-s" data-aos>
 
 <!-- TOP画像 -->
 <div class="top-image-wrapper" data-aos>
   <img src="images/s-main1.png" alt="TOP画像" class="top-image-bg">
 
   <!-- main2画像（右寄せ） -->
-<a href="index.html" class="top-main2 animate-main2">
+<a class="top-main2 animate-main2">
   <img src="images/s-main2.png" alt="メイン2画像">
 </a>
 
 <!-- ロゴ画像 -->
-<a href="index.html" class="top-logo animate-logo">
+<a class="top-logo animate-logo">
   <img src="images/logo4.png" alt="ロゴ">
+</a>
+
+<!-- サブロゴ画像（ズーム用） -->
+<a href="index.html" class="top-logo-ske">
+  <img src="images/logo-ske.png" alt="サブロゴ">
 </a>
 
 </div>
@@ -223,14 +227,14 @@
   <img src="images/good-icon.png" alt="Good" class="icon">
   <span class="highlight-blue">無料で気軽に参加できる！</span>
 </h3>
-        <p>一般参加費無料、スマホ・パソコンから参加できます</p>
+        <p>一般参加費無料！スマホ・パソコンから参加できます</p>
 
         <h3 class="one-icon-heading">
   <img src="images/good-icon.png" alt="Good" class="icon">
   <span class="highlight-blue">サークル作品の通販･展示方法は自由！</span>
 </h3>
 
-        <p>既刊・旧作品だけでもOK！pixivやTwitterに上げた作品の展示だけの参加ももちろんOKです</p>
+        <p>既刊・旧作品だけでもOK！pixivやTwitterを利用した展示だけでの参加ももちろんOKです！</p>
         <div class="center-line" data-aos>
           <img src="images/tugi.png" alt="矢印" class="arrow-overlay">
       </div>
@@ -451,10 +455,10 @@
 
 <!-- ✅ ページトップボタン-->
 
-<a href="#" id="pageTop" class="pagetop">
-  <img src="images/Pagetop.png" alt="ページトップに戻る">
-</a>
 
+  <a href="#" id="pageTop" class="pagetop">
+    <img src="images/Pagetop.png" alt="ページトップに戻る">
+  </a>
 
 
 
@@ -491,23 +495,32 @@
 
       mask.addEventListener('click', () => {
       body.classList.remove('open');
+      mask.style.display = 'none'; // ← 明示的に消す
       });
 
-    // ロゴを遅れて表示
+
+      
   window.addEventListener('load', () => {
     const logo = document.querySelector('.top-logo');
+    const main2 = document.querySelector('.top-main2');
+    const subLogo = document.querySelector('.top-logo-ske');
+
     setTimeout(() => {
       logo.classList.add('visible');
-  }, 15); // 秒後に表示
-});
+    }, 30); // logo4.png
 
-    // メイン2を遅れて表示
-  window.addEventListener('load', () => {
-    const main2 = document.querySelector('.top-main2');
     setTimeout(() => {
       main2.classList.add('visible');
-  }, 0.2); // 秒後に表示
-});
+    }, 0.2); // s-main2.png
+
+    setTimeout(() => {
+      subLogo.classList.add('visible');
+    }, 1800); // logo-ske.png：logo4.png表示後0.5秒
+  });
+
+
+
+
 
     // ズーム+フェード
   document.addEventListener("DOMContentLoaded", function () {
@@ -534,7 +547,7 @@
 
 
 
-      // ページトップボタン
+    // ページトップボタン
   const pageTop = document.getElementById("pageTop");
 
   window.addEventListener("scroll", () => {
@@ -549,6 +562,8 @@
     e.preventDefault();
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
+  
+
 
   </script>
 </body>
