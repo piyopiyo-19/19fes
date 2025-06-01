@@ -54,7 +54,7 @@ html, body {
 body {
   letter-spacing: .025em;
   line-height: 1.8;
-  color: #464775;
+  color: #5e5f92;
   font-weight: 520; /* 共通のフォント */
 }
 body {
@@ -369,13 +369,16 @@ h6 {
 /* 白い角丸ボックス 青枠 */
 .white-box-blue {
   background-color: #ffffff;
-  border: 12px solid rgb(81 109 235); 
+  border: 3px solid rgb(81 109 235); 
   border-radius: 20px;
   padding: 2em 0 2em 0;
   max-width: 960px;
   margin: 0 auto;
   box-sizing: border-box;
   position: relative;
+
+    /* ▼ アニメっぽい右下シャドウ追加 */
+  box-shadow: 1rem 1rem 0px rgb(81 109 235);  /* 右+下にくっきり */
 }
 
 
@@ -925,7 +928,7 @@ padding: 0.1em 0.05em;
 
 @media (max-width: 768px) {
 .webonly-heading-image1 img {
-  top: -85px; /* セクションにかぶる高さ。必要に応じて調整 */
+  top: -99px; /* セクションにかぶる高さ。必要に応じて調整 */
   max-width: 380px;  /* 画像サイズは調整可能 */
    }
     }
