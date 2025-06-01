@@ -50,8 +50,10 @@
       <ul>
         <li><a href="#top">ホーム</a></li>
         <li><a href="howto.html">参加について</a></li>
-        <li><a href="#news">お知らせ</a></li>
+        <li><a href="guideline.html">サークル参加者向けガイドライン</a></li>
         <li><a href="#gallery">ギャラリー</a></li>
+        <li><a href="#download">ダウンロード</a></li>
+        <li><a href="#faq">よくある質問</a></li>
         <li><a href="#contact">お問い合わせ</a></li>
       </ul>
     </div>
@@ -131,8 +133,8 @@
  <section class="navvvv" data-aos>
 <div class="nav-bar" data-aos>
   <div class="nav-bar-inner">
-    <a href="#join" class="nav-item"><img src="images/icon-join.svg" alt="">参加について</a>
-    <a href="#guideline" class="nav-item"><img src="images/icon-guide.svg" alt="">ガイドライン</a>
+    <a href="howto.html" class="nav-item"><img src="images/icon-join.svg" alt="">参加について</a>
+    <a href="guideline.html" class="nav-item"><img src="images/icon-guide.svg" alt="">ガイドライン</a>
     <a href="#gallery" class="nav-item"><img src="images/icon-gallery.svg" alt="">ギャラリー</a>
     <a href="#download" class="nav-item"><img src="images/icon-download.svg" alt="">ダウンロード</a>
     <a href="#faq" class="nav-item"><img src="images/icon-faq.svg" alt="">よくある質問</a>
@@ -162,7 +164,7 @@
 </div>
 <div class="info-line">
   <div class="label">開催日時</div>
-  <div class="value">2026年1月9日（金）22:00 〜 1月10日（土）21:00</div>
+  <div class="value">2026年1月9日（金）22:00 〜 1月10日（土）21:50</div>
 </div>
 <div class="info-line">
   <div class="label">開催場所</div>
@@ -280,10 +282,13 @@
 
 
 
-        <div class="center-line mb-space">
+        <div class="center-line mb-space-long">
           <h2 class="heading-6">サークル参加</h2>
           <p>pictSPACE様内特設ページより参加登録ください</p>
-          <img src="images/sa-kurusannka-bana.png" alt="サークル参加バナー" class="no-padding-img">
+          <a href="https://pictsquare.net/axvht1etg1dwyb2hnh5zkpm2yufvrvjf" target="_blank" rel="noopener noreferrer">
+  <img src="images/sa-kurusannka-bana.png" alt="サークル参加バナー" class="no-padding-img banner-zoom">
+</a>
+
           <p class="note-text">pictSPACE様イベントページ</p>
         </div>
 
@@ -313,7 +318,7 @@
 
 
 
-
+<!-- フッター-
 
   <section class="section" id="news" data-aos>
   <div class="henkoutyuuuu">
@@ -326,7 +331,7 @@
   </div>
   </section>
 
-
+ッター-->
 
   <section class="section" id="gallery" data-aos>
   <div class="henkoutyuuuu">
@@ -378,17 +383,18 @@
     <div class="footer-left">
       <img src="images/footer-logo.png" alt="サイトロゴ" class="footer-logo">
       <div class="footer-info">
-        <p>MNTKFES!<br>PICTSQUARE</p>
+        <p>MNTKFES!</p>
       </div>
     </div>
 
     <div class="footer-right">
       <ul class="footer-nav">
         <li><a href="index.html">ホーム</a></li>
-        <li><a href="#about">参加について</a></li>
-        <li><a href="#news">お知らせ</a></li>
-        <li><a href="#entry">参加</a></li>
+        <li><a href="howto.html">参加について</a></li>
+        <li><a href="guideline.html">ガイドライン</a></li>
         <li><a href="#gallery">ギャラリー</a></li>
+        <li><a href="#download">ダウンロード</a></li>
+        <li><a href="#faq">よくある質問</a></li>
         <li><a href="#contact">お問い合わせ</a></li>
       </ul>
       <div class="footer-social">
@@ -418,9 +424,10 @@
     <div class="footer-columns">
         <li><a href="index.html">ホーム</a></li>
         <li><a href="howto.html">参加について</a></li>
-        <li><a href="#news">お知らせ</a></li>
-        <li><a href="#entry">参加</a></li>
+        <li><a href="guideline.html">ガイドライン</a></li>
         <li><a href="#gallery">ギャラリー</a></li>
+        <li><a href="#download">ダウンロード</a></li>
+        <li><a href="#faq">よくある質問</a></li>
         <li><a href="#contact">お問い合わせ</a></li>
     </div>
   </div>
@@ -442,7 +449,11 @@
 
 
 
+<!-- ✅ ページトップボタン-->
 
+<a href="#" id="pageTop" class="pagetop">
+  <img src="images/Pagetop.png" alt="ページトップに戻る">
+</a>
 
 
 
@@ -519,6 +530,24 @@
         el.classList.add('animate-in');
       }
     });
+  });
+
+
+
+      // ページトップボタン
+  const pageTop = document.getElementById("pageTop");
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 300) {
+      pageTop.classList.add("show");
+    } else {
+      pageTop.classList.remove("show");
+    }
+  });
+
+  pageTop.addEventListener("click", (e) => {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: "smooth" });
   });
 
   </script>

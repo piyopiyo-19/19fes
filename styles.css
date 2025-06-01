@@ -505,18 +505,21 @@ h6 {
   white-space: nowrap;
 }
 
-
-/* 縦線（右線） */
-.nav-item:not(:last-child)::after {
-  content: "";
-  position: absolute;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  height: 2.1em; /* 線の長さ */
-  border-right: 2px solid #ffffff; /* 線の色と太さ */
-  right: -1.5em;  /* ← ここを調整：0 → -0.5emなどに */
+.nav-item:hover {
+  transform: scale(1.05); /* 少し拡大 */
+  color: #bdffd3; /* テキストカラー変更（青系） */
+  transition: all 0.3s ease;
 }
+
+@media (min-width: 769px) {
+  .nav-item:hover {
+    transform: scale(1.05);
+    color: #bdffd3;
+    transition: all 0.3s ease;
+  }
+}
+
+
 
 
 
@@ -1257,7 +1260,7 @@ p.indent{
     content: attr(data-label);
     justify-content: center;
     align-items: center;
-    color: #333333;
+    color: #45458b;
 }
 
 .page-title::before,
@@ -1285,7 +1288,7 @@ p.indent{
   position: relative;
   padding: .5em .5em .5em calc(15px + .5em);/*テキスト周りの余白*/
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 15px 50%);
-  background-color: #959cff;/*背景色*/
+  background-color: #5e6eff;/*背景色*/
   color: #fff;/*文字色*/
   margin-left: -1em; /* 見出しだけ外側にずらす */
   font-size: 1.5em;
@@ -1353,7 +1356,7 @@ p.indent{
  /*左線　見出し*/
 .heading-leftline {
     padding: 0.25em 0.4em;
-    border-left: 4px solid #72adcb;
+    border-left: 4px solid #5fc478;
     margin-top: 1.5em; /* ← 上側のマージンを増やす（3em） */
 }
 
@@ -1367,7 +1370,7 @@ p.indent{
     position: relative;
     margin-top: 5em;
     padding: 1.2em 1.5em 1.8em 1.8em;
-    border: 3px solid #5ba9e1;
+    border: 3px solid #5b73e1;
     border-radius: 15px;
     font-weight: 700;
     margin: 5em 2em 5em 2em; 
@@ -1381,7 +1384,7 @@ p.indent{
     left: -.9em;
     padding: .6em 1.4em;
     border-radius: 5px;
-    background-color: #5ba9e1;
+    background-color: #5b73e1;
     color: #fff;
     font-size: 1.3em;
     font-weight: 700;
@@ -1394,7 +1397,7 @@ p.indent{
     transform: translateX(-50%);
     width: 16px;
     height: 8px;
-    background-color: #5ba9e1;
+    background-color: #5b73e1;
     clip-path: polygon(0 0, 100% 0, 50% 100%);
     content: '';
 }
@@ -1402,7 +1405,7 @@ p.indent{
 .box-019 p {
     margin: 0;
     margin-left: 1em;
-    font-size: 1.2em;
+    font-size: 0.8em;
 }
     .box-019 li{
     margin-left: 0;
@@ -1419,7 +1422,7 @@ p.indent{
   .box-019 {
     margin: 5em 0.5em 5em 0.5em; 
     padding: 1em 2em 1.8em 1em;
-    border: 3px solid #5ba9e1;
+    border: 3px solid #5b73e1;
     border-radius: 15px;
   }
   .box-019 > .box-label {
@@ -1590,6 +1593,22 @@ p.indent{
 
 
 
+    /* バナー拡大演出 */
+.banner-zoom {
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.banner-zoom:hover {
+  transform: scale(1.05); /* 1.05倍に拡大 */
+}
+
+@media (max-width: 768px) {
+  .banner-zoom:hover {
+    transform: none;
+    box-shadow: none;
+  }
+}
 
 
 
@@ -1761,6 +1780,20 @@ p.indent{
   opacity: 1;
   transform: translateY(0);
 }
+
+
+ /*下から　演出*/
+[data-aos-f] {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+[data-aos-f].aos-animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 
 /*フェードアップ　演出*/
 .fade-up {
